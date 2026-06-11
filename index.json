@@ -1,0 +1,158 @@
+{
+  "AoI": {
+    "name": "Imperial Agents",
+    "file": "aoi.json",
+    "detachments": 7,
+    "units": 46
+  },
+  "AM": {
+    "name": "Astra Militarum",
+    "file": "am.json",
+    "detachments": 11,
+    "units": 134
+  },
+  "GC": {
+    "name": "Genestealer Cults",
+    "file": "gc.json",
+    "detachments": 9,
+    "units": 138
+  },
+  "NEC": {
+    "name": "Necrons",
+    "file": "nec.json",
+    "detachments": 13,
+    "units": 64
+  },
+  "AE": {
+    "name": "Aeldari",
+    "file": "ae.json",
+    "detachments": 16,
+    "units": 97
+  },
+  "TL": {
+    "name": "Adeptus Titanicus",
+    "file": "tl.json",
+    "detachments": 0,
+    "units": 4
+  },
+  "ORK": {
+    "name": "Orks",
+    "file": "ork.json",
+    "detachments": 13,
+    "units": 87
+  },
+  "UN": {
+    "name": "Unaligned Forces",
+    "file": "un.json",
+    "detachments": 0,
+    "units": 20
+  },
+  "GK": {
+    "name": "Grey Knights",
+    "file": "gk.json",
+    "detachments": 8,
+    "units": 31
+  },
+  "TAU": {
+    "name": "T\u2019au Empire",
+    "file": "tau.json",
+    "detachments": 8,
+    "units": 63
+  },
+  "LoV": {
+    "name": "Leagues of Votann",
+    "file": "lov.json",
+    "detachments": 9,
+    "units": 22
+  },
+  "AdM": {
+    "name": "Adeptus Mechanicus",
+    "file": "adm.json",
+    "detachments": 10,
+    "units": 39
+  },
+  "TS": {
+    "name": "Thousand Sons",
+    "file": "ts.json",
+    "detachments": 9,
+    "units": 60
+  },
+  "DG": {
+    "name": "Death Guard",
+    "file": "dg.json",
+    "detachments": 10,
+    "units": 71
+  },
+  "EC": {
+    "name": "Emperor\u2019s Children",
+    "file": "ec.json",
+    "detachments": 8,
+    "units": 23
+  },
+  "WE": {
+    "name": "World Eaters",
+    "file": "we.json",
+    "detachments": 8,
+    "units": 58
+  },
+  "QT": {
+    "name": "Chaos Knights",
+    "file": "qt.json",
+    "detachments": 6,
+    "units": 37
+  },
+  "CD": {
+    "name": "Chaos Daemons",
+    "file": "cd.json",
+    "detachments": 11,
+    "units": 106
+  },
+  "QI": {
+    "name": "Imperial Knights",
+    "file": "qi.json",
+    "detachments": 6,
+    "units": 28
+  },
+  "SM": {
+    "name": "Space Marines",
+    "file": "sm.json",
+    "detachments": 44,
+    "units": 298
+  },
+  "TYR": {
+    "name": "Tyranids",
+    "file": "tyr.json",
+    "detachments": 12,
+    "units": 57
+  },
+  "AC": {
+    "name": "Adeptus Custodes",
+    "file": "ac.json",
+    "detachments": 8,
+    "units": 31
+  },
+  "AS": {
+    "name": "Adepta Sororitas",
+    "file": "as.json",
+    "detachments": 7,
+    "units": 38
+  },
+  "CSM": {
+    "name": "Chaos Space Marines",
+    "file": "csm.json",
+    "detachments": 18,
+    "units": 112
+  },
+  "DRU": {
+    "name": "Drukhari",
+    "file": "dru.json",
+    "detachments": 10,
+    "units": 47
+  },
+  "UA": {
+    "name": "Unbound Adversaries",
+    "file": "ua.json",
+    "detachments": 0,
+    "units": 0
+  }
+}
