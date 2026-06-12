@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "source": "Crusade: Armageddon",
+    "edition": 10,
+    "description": "Armageddon Crusade — Hellscapes, Anomalies, Unbound Adversaries, Warp Counters, campaign, Battle Traits"
+  },
+
+  "hellscapes": {
+    "description": "Rules representing breaking down of barriers between reality and the Warp. Applied per mission",
+    "selectionIfNotInMission": {
+      "table_A": { "1": "Folded Space", "2": "Fractured Realm", "3": "Fading Reality", "4": "Scattered Coordinates" },
+      "table_B": { "1": "Staggered Time", "2": "Banishing Rifts", "3": "Gravitic Nexus", "4": "Endless Nightmare" }
+    },
+    "list": {
+      "FOLDED_SPACE": "Action: unit within range of controlled objective in own deployment zone — at end of turn, set up wholly in opponent's deployment zone more than 3\" from enemies. Give unit 1 Warp counter",
+      "FRACTURED_REALM": "Rift extends from objective markers (3\" round 1, 6\" round 2, 9\" round 3+). Models wholly within rift can only target units within rift or in Engagement Range. Models outside cannot target units wholly within rift unless in Engagement Range. Anomaly: give 1 Warp counter to each unit wholly within rift",
+      "FADING_REALITY": "From round 2: at end of opponent's turn, roll D6 for each unit not wholly in own deployment zone — on 4+, give 1 Warp counter. Units with 2+ Warp counters are destroyed (no Out of Action test). TRANSPORT with embarked units — all destroyed. Action: remove all Warp counters from unit",
+      "SCATTERED_COORDINATES": "Until end of battle, each unit has Infiltrators. Deep Strike units must set up more than 9\" from all enemies wholly within 6\" of one battlefield edge. Signal Flare action available",
+      "STAGGERED_TIME": "Specific mission-based Staggered Time rules — see mission",
+      "BANISHING_RIFTS": "Units can banish Warp entities — see mission for specific rules",
+      "GRAVITIC_NEXUS": "Gravity-based terrain effects — see mission",
+      "ENDLESS_NIGHTMARE": "Progressive horror effects — see mission"
+    }
+  },
+
+  "warpCounters": {
+    "description": "Represent growing Warp influence on units",
+    "duration": "Units keep Warp counters until end of battle, until unit destroyed, or until another rule removes them",
+    "removal": "When rule says remove X Warp counters — cannot use rule if unit doesn't have that many"
+  },
+
+  "unboundAdversaries": {
+    "description": "Enemy units native to or invading the battlefield — act in their own turn to thwart both players",
+    "powerLevel": "Determines the strength of Unbound Adversaries units set up",
+    "keyword": "UNBOUND ADVERSARIES",
+    "turnSequence": {
+      "movement": "Move toward nearest unit — MONSTER and WALKER can move through terrain 4\" or less",
+      "shooting": "Target nearest eligible unit",
+      "charge": "Charge nearest eligible unit",
+      "fight": "Fight nearest eligible unit"
+    },
+    "units": {
+      "GREATER_DAEMON": "Powerful single model — high stats, multiple abilities",
+      "LESSER_DAEMONS": "Multiple weaker models — strength in numbers",
+      "ABOMINATION": "Large monstrous creature",
+      "DAEMONIC_BEASTS": "Fast, aggressive pack units"
+    }
+  },
+
+  "battleTraits": {
+    "infantry": {
+      "FORTUNE_FAVOURED": "6+ invulnerable save. While unit has 1+ Warp counters — 5+ invulnerable (not Psychic Attacks)",
+      "WARP_HARDENED_VETERANS": "+2XP when Marked for Greatness. Once per battle in Command phase — add or remove 1 Warp counter",
+      "ADAPTIVE_CAMOUFLAGE": "Stealth ability. If in Strategic Reserves — count battle round as 1 higher for determining when/where to set up",
+      "STALWARTS": "Once per battle at start of any phase — if Battle-shocked, no longer Battle-shocked. Until end of turn: eligible to perform Actions when Falling Back or within Engagement Range of enemy",
+      "FOOTSLOGGERS": "+1\" to Move",
+      "WARP_HUNTERS": "Re-roll Wound rolls of 1 when attacking closest eligible target. If target is UNBOUND ADVERSARIES — re-roll Wound roll"
+    },
+    "monsterAndVehicle": {
+      "WARDING_INSCRIPTIONS": "Feel No Pain 6+ against Psychic Attacks and mortal wounds. With 1+ Warp counters — Feel No Pain 5+",
+      "ADVANCED_SUSPENSORS": "Ranged weapons have ASSAULT ability",
+      "EXTRA_ARMOUR": "+1 to Toughness",
+      "JUGGERNAUT": "Ignore Move modifiers. Can move through terrain but roll D6 — on 1-3, Battle-shocked",
+      "ENDLESS_RAGE": "Eligible to shoot and declare charge in turn it Fell Back",
+      "DAEMON_HUNTER": "Re-roll Hit rolls against UNBOUND ADVERSARIES. +1XP when gaining Dealers of Death XP"
+    },
+    "mounted": {
+      "TIP_OF_THE_SPEAR": "Scouts 6\"",
+      "SKILLED_RIDERS": "Can move through terrain 4\" or less when making Normal/Advance/Charge moves (roll D6 after — 1 = D3 mortal wounds + Battle-shocked, 2-3 = Battle-shocked)",
+      "REACTIVE_REDEPLOYMENT": "After both armies deployed — can redeploy this unit (can go into Strategic Reserves)"
+    },
+    "beast": {
+      "WAR_BEASTS": "+1 to Advance and Charge rolls",
+      "LEAPING_FRENZY": "When unit ends Charge move — roll D6 per model in Engagement Range (+1 if 1+ Warp counters): on 5+, enemy suffers 1 mortal wound",
+      "FEARSOME_PREDATORS_AURA": "While enemy within 6\" — worsen their Leadership and OC by 1 (minimum 1)"
+    },
+    "psyker": {
+      "RITUAL_OF_SHROUDING": "Spend 1RP at Deploy step — unit has Infiltrators until end of battle",
+      "WARP_FOCUS": "+1 to Strength of Psychic weapons. With 1+ Warp counters — +2 to Strength",
+      "SCRYERS_GAZE_AURA": "Enemy Reserves cannot set up within 12\" of this unit",
+      "WARP_ALACRITY": "Re-roll Advance and Charge rolls. When Advancing — remove 1 Warp counter to gain +6\" Move (cannot charge that turn) without Advance roll",
+      "FORCE_SHIELD": "Against non-Psychic attacks with Strength > unit Toughness — subtract 1 from Wound roll",
+      "WARP_TERRORS": "Once per turn at start of any phase — select enemy within 18\": must take Battle-shock test (-1 to test if 1+ Warp counters)"
+    }
+  },
+
+  "campaign": {
+    "phases": 4,
+    "alliances": {
+      "Gatebreakers": "Stem the tide of Chaos — Imperium and enemies of Chaos",
+      "Desecrators": "Transform Armageddon into a nightmare world — Chaos forces",
+      "Marauders": "Opportunistic raiders — other factions"
+    },
+    "narrativeGoals": "Each alliance pursues narrative goals per phase. Alliance with most Strategic Points at end of goal wins that goal",
+    "campaignPoints": "Alliance that wins most Strategic Points overall wins the campaign",
+    "endCondition": "After 4 phases — alliance with highest total Strategic Points wins"
+  },
+
+  "crusadeRelics": {
+    "artificer": {
+      "PERIAPT_OF_THE_RIGHTEOUS": "+2 to Wounds. In Command phase — remove 1 Warp counter to regain D3 lost wounds",
+      "TARTARINE_CUIRASS": "Subtract 1 from Damage of attacks allocated to bearer (not cumulative with other Damage worsen modifiers)",
+      "GRIMOIRE_ABJURATIS": "BEAST or MONSTER attacks against bearer's unit — subtract 1 from Wound roll. If UNBOUND ADVERSARIES — also subtract 1 from Hit roll",
+      "COWL_OF_VEHEMENCE": "PSYKER only. Re-roll Wound rolls of 1 for Psychic Attacks. With 1+ Warp counters — re-roll Wound roll"
+    },
+    "antiquity": {
+      "RIFTWALKER_ASTROLABE": "Bearer and unit have Deep Strike ability",
+      "WEAPON_OF_RENOWN": "Select melee weapon — gains ANTI-UNBOUND ADVERSARIES 4+ and DEVASTATING WOUNDS",
+      "EXORCISTS_THURIBLE": "Feel No Pain 5+ against mortal wounds and Psychic Attacks. Once per battle — after rolling Anomaly, remove 1 Warp counter to change one die result",
+      "SANGUIFLAMME_OF_ARMAGEDDON": "At start of Command phase if within range of controlled objective — either remove 1 Warp counter to gain 1CP, or take Leadership test: if passed, gain 1CP"
+    },
+    "legendary": {
+      "VENGEANCE_TOTEM": "When unit destroyed — roll D6 for every enemy within 6\": on 4+, D3 mortal wounds. If had 1+ Warp counters — set up UNBOUND ADVERSARIES unit with Power Level equal to Warp counters had",
+      "EMPYROMANCERS_FOCUS": "PSYKER only. Psychic weapons have SUSTAINED HITS 2. At end of Set Warp Events step — can increase or decrease Warp Events intensity by 1",
+      "WARP_TOUCHED_WEAPON": "Select melee weapon — +1 to Attacks, Strength, and Damage. When selected to fight — remove up to 3 Warp counters: +1 to Attacks and Strength per counter removed until end of phase",
+      "BEAST_WARD_BARBUTE": "BEAST or MONSTER targeting bearer's unit must take Battle-shock test before attacks. Subtract 1 from Hit rolls (and Wound if test failed). Once per battle in Command phase — select UNBOUND ADVERSARIES within 18\": that unit loses UNBOUND ADVERSARIES keyword and joins your Crusade army until start of next Command phase"
+    }
+  }
+}

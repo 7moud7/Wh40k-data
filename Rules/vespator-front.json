@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "source": "500 Worlds: War on the Vespator Front",
+    "edition": 10,
+    "description": "Vespator Front map campaign — Planets, Infrastructure, Fleets, Operations, Theatres, missions"
+  },
+
+  "campaign": {
+    "playerCount": "3-12 players (recommended)",
+    "alliances": {
+      "recommended": 3,
+      "minimum": 2
+    },
+    "allianceTypes": {
+      "Guardians": "Protect Sangua Terra, repel invaders — Imperium forces",
+      "Despoilers": "Conquer Sangua Terra — Chaos forces",
+      "Marauders": "Opportunistic raiders — xenos, renegades, mercenaries"
+    },
+    "duration": "Recommended 6 Campaign phases (~1 month each). Can be compressed for weekend events",
+    "warmaster": "One player takes Campaign Master/Warmaster role — manages map, battle results, events"
+  },
+
+  "campaignMap": {
+    "planets": "Multiple planets on map — each with Power Level per alliance, Infrastructure locations, and orbit locations for Fleets",
+    "powerLevel": {
+      "minimum": 1,
+      "maximum": 4,
+      "effect": "Higher Power Level = advantages in battles at that planet"
+    },
+    "controlLevels": {
+      "0": "No Presence",
+      "1-2": "Establishing Foothold",
+      "3-4": "Securing Positions",
+      "5+": "Fortified"
+    },
+    "campaignPoints": "CVP — tallied from combined Power Level across all planets + 3 if Stronghold undestroyed"
+  },
+
+  "infrastructure": {
+    "maximum": {
+      "Stronghold": 1,
+      "SupportFacility": 3,
+      "StagingGrounds": 3,
+      "FortificationLine": 5
+    },
+    "types": {
+      "STRONGHOLD": {
+        "effect": "When winning battle at this or connected planet — treat alliance Power Level as 1 higher or lower for Campaign Outcomes",
+        "bonus": "+3 Campaign points to alliance while undestroyed"
+      },
+      "STAGING_GROUNDS": {
+        "effect": "When fighting at this or connected planet — treat Power Level as 1 higher or lower for Mission Rules. Not cumulative"
+      },
+      "SUPPORT_FACILITY": {
+        "effect": "Planets at distance of 2 from this planet are considered connected (but not vice versa)"
+      },
+      "FORTIFICATION_LINE": {
+        "effect": "Minimum Power Level at this planet increased by 1. Each time a rule would reduce Power Level below minimum — one Fortification Line destroyed instead"
+      }
+    },
+    "destroying": "When last Infrastructure location on a planet is destroyed — planet becomes uninhabitable. All Power Levels drop to 0. No Campaign Operations can target it"
+  },
+
+  "campaignPhase": {
+    "steps": [
+      "Select Operations (each player selects one Campaign Operation per Fleet)",
+      "Perform Operations (reveal, resolve battles, build infrastructure, move fleets)",
+      "Results and Vespator Front Events",
+      "Move Fleets",
+      "Build Infrastructure"
+    ]
+  },
+
+  "operations": {
+    "BATTLE_OPERATION": {
+      "description": "Fight a game of Warhammer 40,000",
+      "select": "Choose Campaign Attack Type, target planet, and opposing alliance",
+      "attackTypes": {
+        "SEIZE_POWER_BASE": "Take over or destroy opponent's Infrastructure",
+        "PURGE_AND_BURN": "Reduce opponent's Power Level by exterminating foe",
+        "ORBITAL_INVASION": "Reduce opponent's Power Level by seizing beachhead",
+        "PLANETARY_BOMBARDMENT": "Destroy planet's Infrastructure locations",
+        "SUPPLY_BASE_RAID": "Sabotage to reduce Power Level here or at connected planets",
+        "BOARDING_ACTION": "Strike opponent's Fleet in orbit — force it to relocate"
+      }
+    },
+    "VOID_LEAP_OPERATION": "Move Fleet to any planet on map (not just connected)",
+    "RAISE_EDIFICES_OPERATION": "Build Fortification Line, Support Facility, or Staging Grounds at Fleet's current planet",
+    "LOGISTICAL_AUXILIA_OPERATION": "Until end of Campaign phase — when attacked on this or connected planet, your player can select the Theatre used (instead of attacker)",
+    "DEPLOY_KILL_TEAMS_OPERATION": "Select this or connected planet — roll D6 for each opposing alliance: on 5+, reduce their Power Level at that planet by 1"
+  },
+
+  "controlLevelRewards": {
+    "phase1": { "1st": "+2 Control Level", "2nd": "+1 Control Level", "3rd": "+0 Control Level" },
+    "phase2": { "1st": "+2 Control Level", "2nd": "+1 Control Level", "3rd": "+1 Control Level" },
+    "phase3": { "1st": "+3 Control Level", "2nd": "+2 Control Level", "3rd": "+1 Control Level" }
+  },
+
+  "theatres": {
+    "description": "Attacker selects one Theatre from planet's available theatres. Roll D6 for Twist",
+    "types": {
+      "SPACEPORT": {
+        "tactical": "Control objectives, reactive manoeuvring, Fall Back and act",
+        "twists": {
+          "1_COORDINATE_LOCK": "Controlled objectives stay controlled until opponent's Level of Control is greater at end of a phase",
+          "2_VID_FEED_NETWORK": "Each time unit Falls Back — choose: eligible to shoot OR eligible to charge that turn",
+          "3_EMBARKATION_SHRINES": "At end of each player's turn — opponent can select one unit within range of objective not in Engagement Range: place in Strategic Reserves"
+        }
+      },
+      "DESOLATE_WASTES": {
+        "tactical": "Swift INFANTRY and MOUNTED — aggressive deployment, repositioning",
+        "twists": {
+          "1_OPEN_GROUND": "Re-roll Advance and Charge rolls (excluding MONSTER and VEHICLE)",
+          "2_EYE_OF_JUDGEMENT": "At end of Declare Battle Formations — each player selects up to 2 non-MONSTER/VEHICLE units: Scouts 6\"",
+          "3_EXPOSED_COMBATANTS": "Ranged weapons on non-MONSTER/VEHICLE have ASSAULT"
+        }
+      },
+      "XENOFLORA_JUNGLE": {
+        "tactical": "Melee-heavy armies, improved damage and anti-overwatch",
+        "twists": {
+          "1_SLAUGHTER_SPORES": "+1 to Strength of melee weapons",
+          "2_GREEN_HELL": "Units cannot use Fire Overwatch Stratagem",
+          "3_PREDATORY_PLANTLIFE": "Each time unit (not MONSTER/VEHICLE) Falls Back — all models take Desperate Escape test (-1 if Battle-shocked)"
+        }
+      },
+      "RAD_ZONE": {
+        "tactical": "Attritional — disrupts communications, reduces lethality, improves durability",
+        "twists": {
+          "1_TOXIC_ASH_STORM": "Round 2: max range 18\". Round 3: max range 12\". Round 4: max range 18\" again",
+          "2_RAD_MALAISE": "+1 to Hit rolls in melee against units that charged this turn",
+          "3_ESOTERIC_INTERFERENCE": "Cannot gain additional CP outside of Command phase 1CP (no extra CP from any source)"
+        }
+      },
+      "FORGE_COMPLEX": {
+        "tactical": "Tough durable units. Lighter units take extra AP damage from extreme heat",
+        "twists": {
+          "1_THERMIC_CORROSION": "Attacks within 9\" against non-MONSTER/VEHICLE — improve AP by 1",
+          "2_PLASMIC_VENTING": "At start of each round — Attacker rolls D6 (result <= current round = venting occurs). Roll D6 for each unit not within range of objective: if result >= Toughness, unit is pinned (-2\" Move, -2 to Charge rolls)",
+          "3_VOLATILE_COMBUSTIBLES": "+1 to attacks determined for Blast weapons"
+        }
+      },
+      "HAB_SPRAWL": {
+        "tactical": "Dense terrain. INFANTRY in AREA TERRAIN gain survivability or lethality",
+        "twists": {
+          "1_ROILING_FUMES": "While wholly within AREA TERRAIN — model has Stealth",
+          "2_FIRING_POSITIONS": "While wholly within AREA TERRAIN — can be targeted with Fire Overwatch for 0CP. Hits on 5+ when resolving",
+          "3_INTO_THE_DEPTHS": "At end of each player's turn — opponent can select one unit wholly within AREA TERRAIN not in Engagement Range: place in Strategic Reserves"
+        }
+      },
+      "DELVESITE_FACILITY": {
+        "tactical": "Scavenged explosives and mining equipment help weaker units against tough targets",
+        "twists": {
+          "1_SANCTIFIED_CHARGES": "Each player secretly selects one No Man's Land objective. Once per battle when enemy ends move within range of it — reveal and roll D6: on 2+, D6+1 mortal wounds",
+          "2_CRUMBLING_BEDROCK": "When attacking within 12\" — ignore any/all modifiers to BS, Hit roll, and Wound roll",
+          "3_TECTONIC_SHOCK": "Attacks targeting units within range of No Man's Land objectives have LETHAL HITS"
+        }
+      },
+      "DEAD_LANDS": {
+        "tactical": "Heavy armour — MONSTER and VEHICLE speed, durability, and lethality increased",
+        "twists": {
+          "1_BLEAK_EXPANSE": "+3\" to Move of MONSTER and VEHICLE units",
+          "2_ROCKY_OUTCROPPINGS": "When MONSTER or VEHICLE Remains Stationary — re-roll Hit rolls of 1 for ranged attacks until end of turn",
+          "3_SHROUD_OF_DUST": "When MONSTER or VEHICLE makes Advance move — until start of next player's turn, Stealth ability"
+        }
+      },
+      "TOMB_COMPLEX": {
+        "tactical": "Unpredictable — eldritch energy effects suit varied armies",
+        "twists": {
+          "1_SPACE_TIME_COMPRESSION": "+2 to Advance rolls",
+          "2_OVERPOWERING_ENERGIES": "When unit selected to shoot or fight — can use this. Until end of phase: +2 to Strength of weapons + weapons have HAZARDOUS",
+          "3_QUANTUM_SHIELDING": "Models have 5+ invulnerable save against ranged attacks"
+        }
+      }
+    }
+  },
+
+  "missionSequence": [
+    "Read Mission",
+    "Select Battle Size",
+    "Muster Armies",
+    "Place Objective Markers",
+    "Determine Theatre Twist (Attacker selects Theatre, roll D6 for Twist)",
+    "Create the Battlefield",
+    "Determine Attacker and Defender (Campaign Attack player is Attacker)",
+    "Declare Battle Formations (with Reserves restrictions)",
+    "Deploy Armies",
+    "Redeploy Units",
+    "Determine First Turn (roll off unless mission states otherwise)",
+    "Resolve Pre-battle Rules",
+    "Begin the Battle",
+    "End the Battle (5 rounds)",
+    "Determine Victor",
+    "Resolve Campaign Outcome"
+  ],
+
+  "reservesRestrictions": {
+    "maxUnitsInReserves": "No more than half number of units",
+    "maxPointsInReserves": "No more than half total points",
+    "cannotArriveRound1": true,
+    "destroyedIfNotArrived": "By end of round 3 — count as destroyed (except units placed into Strategic Reserves during battle)"
+  },
+
+  "vespatorFrontEvents": {
+    "when": "After Results step each Campaign phase",
+    "dominatingAlliance": "5+ Campaign points ahead of each other — roll D6: on 4+, generate Perils of Power Event",
+    "trailingAlliance": "5+ Campaign points behind each other — roll D6: on 4+, generate Desperate Measures Event",
+    "fortunesOfWar": "Roll D6 (+1 if phase 4+): on 4+, generate Fortunes of War Event (D33)"
+  },
+
+  "campaignMedals": {
+    "LAUREL_OF_VICTORY": "Victorious Alliance — Benefit: chosen planet in next campaign gets exclusive bonus setup",
+    "PENUMBRAL_WREATH": "Alliance with most planets at Power Level 1 — Benefit: +2 Power Level at 2 chosen planets at start",
+    "STAR_OF_THE_VOIDFARER": "Alliance with Support Facilities furthest apart — Benefit: Fleets can move twice in first Move Fleets step",
+    "SABLE_DAGGER": "Alliance with Fleets furthest apart — Benefit: can swap Power Levels between 2 planets up to 3 times at setup"
+  }
+}

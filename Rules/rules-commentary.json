@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "source": "Warhammer 40,000 Rules Commentary v1.5 + Core Rules FAQs v1.8",
+    "edition": 10,
+    "description": "Official clarifications, definitions, edge cases, modifiers, and FAQs"
+  },
+
+  "keyDefinitions": {
+    "activePlayer": "The player whose turn is taking place",
+    "any": "Means 'one or more'. 'Within Engagement Range of any enemy units' = within Engagement Range of one or more",
+    "army": "All units on Army Roster plus any added during battle",
+    "as_close_as_possible": "End in base-to-base contact if move sufficient (without breaking other restrictions). If already as close as possible — cannot move but still counts as having made the move",
+    "automatically_successful": {
+      "diceNotRolled": "Do not roll dice — rules triggered by specific dice results do not trigger",
+      "hitRoll": "Not a Critical Hit — does not trigger Critical Hit effects",
+      "woundRoll": "Not a Critical Wound — does not trigger Critical Wound effects"
+    },
+    "base_to_base_contact": "Model bases touching. If enemy model overhangs its base — models considered in base contact if: (1) move was sufficient to reach, (2) moved as close as possible, (3) any part within 1\" of any part of other model",
+    "bearer": "The model equipped with a weapon, Enhancement, or item of wargear",
+    "best_characteristic": "Value all others are worse than or equal to. For + values: lower number is better",
+    "closest_model_unit": "If two or more equally close — controlling player selects which counts as closest",
+    "critical_hit": "Unmodified Hit roll of 6. Always successful. Does not trigger Critical Hit effects if using Fire Overwatch (still requires 6 due to that Stratagem's rules)",
+    "critical_wound": "Unmodified Wound roll of 6. Always successful",
+    "destroyed_by": "Only triggers if destroyed by: attack from model in your army, mortal wound from your army's rule, or other rule explicitly stating it destroys the unit",
+    "different_model_unit": "A model/unit other than the one specified — different instances of same datasheet are still 'other' units",
+    "hull": "When measuring to/from VEHICLES without bases or models without bases — measure to closest part of model (or base if it has one)",
+    "immediately": "Resolve before anything else happens (same as 'just after')",
+    "just_after": "Resolved before anything else happens — can interrupt normal sequences like attack sequence or charge sequence",
+    "or_better_saves": "Lower number before + sign is better. 2+ is better than 3+",
+    "or_worse_saves": "Higher number before + sign is worse. 3+ is worse than 2+",
+    "or_better_other": "Higher number is better for Strength, Toughness, Wounds, etc.",
+    "remained_stationary": "Units on battlefield at start of Movement phase not selected to move in Move Units step count as Remained Stationary",
+    "unit_coherency_removed": "Models removed for being out of coherency count as destroyed but do NOT trigger rules triggered when model is destroyed",
+    "within": "Any distance not more than that distance. 'Within 1\"' = any distance not more than 1\" away",
+    "wholly_within_model": "Every part of base (or hull) is within that distance",
+    "wholly_within_unit": "Every model in unit is wholly within that distance",
+    "wounds_lost": "Lose wounds equal to attack Damage. If Damage characteristic includes operator (e.g. D6+1) — the +1 is part of the characteristic, not a modifier"
+  },
+
+  "attackClarifications": {
+    "additionalHits": "Additional hits from Critical Hit (e.g. SUSTAINED HITS) are automatically successful — not Critical Hits themselves, do not trigger Critical Hit effects",
+    "lethal_hits_and_devastating_wounds": "Lethal Hits auto-wounds. That auto-wound is not a Critical Wound — does not trigger Devastating Wounds",
+    "lethal_hits_and_sustained_hits": "Additional hits from Sustained Hits do not benefit from Lethal Hits",
+    "fast_dice_rolling_reroll": "Can roll multiple at once then decide which to re-roll (if rule allows one re-roll)",
+    "target_no_longer_eligible": "If target stops being eligible after selected — attacking/charging unit can select new targets",
+    "mortal_wounds_order": "Normal damage always resolved before mortal wounds from same attack, even if normal damage saved",
+    "devastating_wounds_allocated_last": "Critical Wounds with Devastating Wounds allocated after all other attacks from unit resolved"
+  },
+
+  "movementClarifications": {
+    "count_as_normal_move": "Units arriving from Reserves/disembarking from moved TRANSPORT count as having made Normal move. They have NOT made a Normal move — cannot trigger Stratagems/abilities that trigger 'after unit makes Normal move'",
+    "fall_back_then_returned": "If unit Falls Back then is repositioned — still counts as Fallen Back",
+    "models_can_overhang_edge": "Models can overhang battlefield edge provided base/hull is wholly on battlefield",
+    "tilting_base_overhang": "If model too large to set up wholly within area — set up so base/hull is touching battlefield edge. Cannot shoot, charge, move, or Remain Stationary that turn",
+    "vehicles_with_bases": "Measure to closest part of model (base or hull). In base contact when within 0\" horizontally and 5\" vertically"
+  },
+
+  "chargeClarifications": {
+    "charge_bonus": "Fights First from charging is Charge bonus. Other rules triggered when charging are NOT Charge bonus",
+    "has_charged": "If unit makes Charge move — unit and every model in it is said to have charged until end of turn",
+    "has_been_charged": "If unit was target of successful charge — unit and every model is said to have been charged until end of turn"
+  },
+
+  "fightPhaseClarifications": {
+    "consolidate_mandatory": "Consolidation is not optional. Whether individual models move during Consolidation IS optional",
+    "consolidate_without_moving": "If no models actually moved (already in base contact or chose not to) — unit still counts as having Consolidated",
+    "fight_on_death": "Resolved before attacking unit Consolidates and before other destruction triggers. Model assumes 1 wound remaining. After fighting, other triggers fire, then model removed — it does NOT Consolidate",
+    "individual_model_fighting": "When rule lets one model fight: can Pile In (must end in Unit Coherency), make attacks, Consolidate (must end in Unit Coherency)"
+  },
+
+  "stratagemClarifications": {
+    "affected_by_stratagem": "Unit targeted by Stratagem is 'affected by' it. New Orders Stratagem targets Secondary Mission card — not any unit, so always usable even if all units Battle-shocked",
+    "battle_shocked_stratagem": "Effects of Stratagems already applied do NOT stop when unit becomes Battle-shocked",
+    "cp_gained_from_mission_cards": "CP from discarding Secondary Mission cards counts toward battle round CP limit",
+    "fire_overwatch_monster_vehicle": "Big Guns Never Tire applies in controlling player's Shooting phase only. MONSTER/VEHICLE locked in combat cannot use Fire Overwatch",
+    "rites_of_battle_faq": "Abilities without specific Stratagem name: reduce cost by 1CP instead of 0CP. Cannot grant ability to use same Stratagem twice in phase"
+  },
+
+  "reservesClarifications": {
+    "strategic_reserves_vs_reserves": "All Strategic Reserves are Reserves but not all Reserves are Strategic Reserves. Restrictions on Reserves apply to Strategic Reserves too",
+    "reserves_eligibility_to_shoot": "Units in Reserves ARE eligible to shoot — but cannot actually shoot unless they have a target",
+    "aircraft_reserves": "AIRCRAFT in Reserves at Declare Battle Formations step NOT counted toward Strategic Reserves limits. Treated as Strategic Reserves once battle starts",
+    "deep_strike_from_strategic_reserves": "Player can choose Deep Strike placement OR Strategic Reserves placement when arriving from Strategic Reserves"
+  },
+
+  "objectiveClarifications": {
+    "control_timing": "Control determined at end of any phase or turn. Cannot control before end of first Command phase (all start contested)",
+    "objective_secured_clarification": "Even with Objective Secured ability — control determined at end of each phase/turn. Opponent gains control if their Level of Control is greater at end of any phase/turn"
+  },
+
+  "transportClarifications": {
+    "embarked_units": "Embarked units do NOT count as on battlefield. Cannot do anything or be targeted unless rule explicitly states so",
+    "embarked_fall_back": "If unit Falls Back and all conditions met — can embark in TRANSPORT even outside Movement phase, unless explicitly stated otherwise",
+    "firing_deck_advanced": "TRANSPORT with Firing Deck can use weapons from units that Fell Back or Advanced this turn (those unit's restrictions don't apply to TRANSPORT)",
+    "rapid_ingress_transport": "If TRANSPORT arrives via Rapid Ingress — units embarked within cannot disembark that phase"
+  },
+
+  "commandPhaseClarifications": {
+    "command_step_timing": "Stratagems used in Command phase without specifying 'Battle-shock step' or 'end of Command phase' are always used in Command step",
+    "battle_shock_tests_limit": "Cannot take more than one Battle-shock test per unit in Battle-shock step. Can take more in other phases and Command step",
+    "warlord_cp_exception": "Rules granting more than 1CP at once per battle (e.g. Code Chivalric) explicitly ignore per-round CP limit"
+  },
+
+  "modifiers": {
+    "order": "1. Change/replace characteristic to specified value. 2. Division modifiers. 3. Multiplication modifiers. 4. Addition modifiers. 5. Subtraction modifiers. 6. Round fractions up",
+    "cumulative": "All modifiers are cumulative",
+    "hitRollModifiers": "Cannot be modified by more than -1 or +1 total",
+    "woundRollModifiers": "Cannot be modified by more than -1 or +1 total",
+    "savingThrowImprovement": "Cannot be improved by more than +1",
+    "cpCostMinimum": "CP cost of Stratagem cannot be modified below 0CP",
+    "characteristicsMinimums": {
+      "Strength": 1, "Toughness": 1, "Attacks": 1, "Damage": 1,
+      "Move": "1\"", "Range": "1\"",
+      "AP": 0,
+      "OC": 0,
+      "Save": "Cannot be 1+ or better after modifiers",
+      "WS_BS": "Cannot be 1+ or better after modifiers",
+      "Leadership": "Cannot be 4+ or better, or 9+ or worse after modifiers"
+    },
+    "improvingVsWorsening": {
+      "improving_saves_WS_BS": "Subtract from number before + sign. 3+ improved by 1 = 2+",
+      "worsening_saves_WS_BS": "Add to number before + sign. 3+ worsened by 1 = 4+",
+      "improving_AP": "Subtract from characteristic. AP -1 improved by 1 = AP -2. AP 0 improved by 1 = AP -1",
+      "worsening_AP": "Add to characteristic, max 0. AP -1 worsened by 1 = AP 0"
+    },
+    "duplicatedCoreAbilities": "If model has multiple instances of same Core ability — not cumulative. Only one instance takes effect. If ability has number (SUSTAINED HITS 1, Scouts 6\") — player chooses which to use each time"
+  },
+
+  "visibilityClarifications": {
+    "ruins_and_vehicles": "For VEHICLE models (not WALKER with base) or models without bases — use every part of model including base (if it has one) to determine within/wholly within ruins. For all other models — use the base only, except for overhanging parts which are ignored for visibility purposes",
+    "model_fully_visible": "For purposes of determining if enemy unit fully visible — observing model can see through other models in unit being observed"
+  },
+
+  "miscFAQ": {
+    "fire_overwatch_closest_target": "Yes — if it is the closest unengaged, visible enemy unit",
+    "damage_to_zero_and_negative_modifier": "Change to 0 takes effect first, then modifiers applied (e.g. MELTA 2 on weapon set to 0 damage = final damage 2)",
+    "multiple_conditions_rules": "Second condition must be met alongside first for improved rule. Both conditions required",
+    "shoot_or_fight_after_destroyed": "That model's unit does NOT count as having been selected to shoot or fight — no associated triggers",
+    "warlord_model_not_unit": "Attacks against Attached unit containing CHARACTER models that are not EPIC HEROES — yes can be allocated to CHARACTER if not Attached",
+    "consolidation_toward_objective": "Can move in any direction as long as ends closer to objective marker and remains within range",
+    "psyker_hazardous": "Yes — mortal wounds from failed Hazardous test using Psychic weapon count as Psychic Attacks",
+    "devastating_wounds_melta": "If Damage changed to 0 then MELTA adds to it — final Damage is the MELTA bonus value"
+  }
+}

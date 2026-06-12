@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "source": "Pariah Nexus Mission Deck v1.4 + Pariah Nexus Tournament Companion",
+    "edition": 10,
+    "description": "Pariah Nexus Chapter Approved matched play — Actions, Secret Missions, Strategic Footings"
+  },
+
+  "missionSequence": [
+    "Muster Armies",
+    "Determine Mission",
+    "Read Mission",
+    "Place Objective Markers",
+    "Create the Battlefield (44x60\")",
+    "Determine Attacker and Defender (roll off)",
+    "Select Secondary Missions (Fixed or Tactical)",
+    "Declare Battle Formations",
+    "Deploy Armies (Defender first, TITANIC units = skip next deployment turn)",
+    "Redeploy Units",
+    "Determine First Turn (roll off)",
+    "Resolve Pre-battle Rules",
+    "Begin the Battle",
+    "End the Battle (5 rounds)",
+    "Determine Victor"
+  ],
+
+  "reservesRestrictions": {
+    "maxUnitsInReserves": "No more than half the number of units in army",
+    "maxPointsInReserves": "No more than half total points of army",
+    "cannotArriveRound1": true,
+    "destroyedIfNotArrived": "Any Reserves not on battlefield by end of round 3 count as destroyed (does not apply to units placed into Strategic Reserves during battle)"
+  },
+
+  "scoring": {
+    "maximumVP": {
+      "primaryAndSecretMission": 50,
+      "secondaryMissions": 40,
+      "battleReadyArmy": 10,
+      "total": 100
+    },
+    "fixedMissions": { "maxPerCard": 20 }
+  },
+
+  "actions": {
+    "description": "Daring battlefield tasks units can attempt",
+    "cannotStart": [
+      "AIRCRAFT unit",
+      "Battle-shocked",
+      "OC characteristic of 0",
+      "Within Engagement Range of enemy (unless TITANIC CHARACTER)",
+      "Advanced or Fell Back this turn",
+      "Not eligible to shoot this phase (including already shot)"
+    ],
+    "whilePerforming": "Not eligible to shoot or declare charge. TITANIC CHARACTER: cannot start another Action and cannot declare charge",
+    "fails": "If unit makes a move (excluding Pile-in/Consolidation) or leaves battlefield",
+    "completionNotes": "Each Action states when it starts, when it completes, and what happens if completed"
+  },
+
+  "secretMissions": {
+    "when": "End of third battle round — starting with player who had second turn",
+    "eligibility": "If your Primary Mission VP total <= opponent's",
+    "selection": "Secretly select one card from Secret Mission deck, place face-down",
+    "effects": [
+      "In round 5, cannot score VP from Primary Mission",
+      "Cannot score more than 20VP from Primary Mission total",
+      "At end of battle, reveal card — if goal achieved, score VP"
+    ]
+  },
+
+  "secondaryMissions": {
+    "tactical": {
+      "drawing": "Draw 2 cards at start of first Command phase. Draw to maintain 2 active cards each subsequent Command phase",
+      "discarding": "Discard when VP scored. Can discard voluntarily at end of either player's turn — gain 1CP if your turn",
+      "newOrders": "1CP — end of Command phase: discard one active card, draw one new card"
+    },
+    "cards": {
+      "ASSASSINATION": "4VP per CHARACTER destroyed (Fixed) or 5VP at end of turn (Tactical)",
+      "BEHIND_ENEMY_LINES": "3VP for 1 unit, 4VP for 2+ units wholly in opponent's deployment zone (excluding AIRCRAFT and Battle-shocked)",
+      "BRING_IT_DOWN": "2VP per MONSTER/VEHICLE destroyed. +2VP if combined Wounds 15+. +2VP if combined Wounds 20+",
+      "STORM_HOSTILE_OBJECTIVE": "4VP — control objective opponent had at start of turn, or opponent had none and you gained one",
+      "CULL_THE_HORDE": "5VP each time INFANTRY unit destroyed if Starting Strength 20+, total Wounds 25+, or points sufficient for 20+ models",
+      "RECOVER_ASSETS": "3VP for 2 units recovering assets, 6VP for 3 — units in deployment zone/No Man's Land/opponent's zone each perform action",
+      "AREA_DENIAL": "2VP — units within 3\" of centre, no enemy within 3\". 5VP if no enemy within 6\" of centre",
+      "SECURE_NO_MANS_LAND": "2VP for 1 objective in No Man's Land, 5VP for 2+",
+      "CONTAINMENT": "3VP per battlefield edge contained (up to 6VP) — units within 9\" of edge perform action",
+      "MARKED_FOR_DEATH": "5VP — opponent selects 3 units when drawn; score VP when one or more destroyed",
+      "NO_PRISONERS": "2VP per enemy unit destroyed (up to 5VP)",
+      "DEFEND_STRONGHOLD": "3VP — control objectives in deployment zone at end of opponent's turn or battle end",
+      "SABOTAGE": "3VP if unit commits sabotage not in opponent's deployment zone, 6VP if in opponent's deployment zone — unit within terrain feature performs action",
+      "OVERWHELMING_FORCE": "3VP each time enemy unit within range of objective destroyed (up to 5VP)",
+      "EXTEND_BATTLE_LINES": "5VP — control objectives in own deployment zone AND No Man's Land. 2VP if only 1 unit remaining and controls 1 No Man's Land objective",
+      "ENGAGE_ON_ALL_FRONTS": "2VP for 3 quarters, 4VP for 4 quarters — units in different table quarters more than 6\" from centre",
+      "ESTABLISH_LOCUS": "2VP at centre of battlefield, 4VP in opponent's deployment zone — unit performs action ending in that location",
+      "CLEANSE": "2VP for 1 objective cleansed, 4VP for 2+ — units within range of objective perform action"
+    }
+  },
+
+  "missionRuleCards": {
+    "INSPIRED_LEADERSHIP": "While WARLORD not in own deployment zone and within 9\" of unit taking Battle-shock test, add 1 to test",
+    "RAPID_ESCALATION": "Round 1: BATTLELINE units from Strategic Reserves can arrive. Max 10%/20%/30% of points for Incursion/Strike Force/Onslaught",
+    "SMOKE_AND_MIRRORS": "After deployment: each player can place one unit (up to 25%/50%/75% points) into Strategic Reserves",
+    "HIDDEN_SUPPLIES": "Add one extra objective marker in No Man's Land. Shift centre marker 6\" toward corner, place new one 6\" toward opposite corner",
+    "RAISE_BANNERS": "End of each player's turn: BATTLELINE unit within range of controlled objective scores 1VP and raises banner (cannot raise again on same objective)",
+    "STALWARTS": "BATTLELINE units performing Actions still eligible to shoot. BATTLELINE units can perform Actions within Engagement Range of enemy",
+    "ADAPT_OR_DIE": "Fixed: once per battle discard one Fixed Mission and replace. Tactical: twice per battle after drawing, draw extra card then shuffle one back",
+    "SWIFT_ACTION": "BATTLELINE units that Advance or Fall Back still eligible to perform an Action",
+    "FOG_OF_WAR": "Round 1: units have Benefit of Cover, no Core Stratagems (except New Orders)",
+    "PREPARED_POSITIONS": "BATTLELINE units can be targeted with Go to Ground and Heroic Intervention for 0CP"
+  },
+
+  "primaryMissions": {
+    "PURGE_THE_FOE": "End of each battle round: 4VP if destroyed any enemy. From round 2: +4VP if more enemy than friendly destroyed. From round 2 end of Command phase: 4VP if control objectives + 4VP if more than opponent",
+    "LINCHPIN": "From round 2: if not controlling own deployment zone objective — 3VP per controlled objective. If controlling it — 3VP for it + 5VP per other (max 15VP per turn)",
+    "SCORCHED_EARTH": "Burn Objective action from round 2. 5VP per No Man's Land burned, 10VP per opponent's deployment zone burned. 5VP per controlled objective (max 10VP per turn)",
+    "UNEXPLODED_ORDNANCE": "No Man's Land objectives are Hazard markers. Move Hazard action. Score per hazard proximity to opponent's deployment zone each turn",
+    "SUPPLY_DROP": "Alpha/Omega objectives — Alpha removed round 4, others except Omega removed round 5. 5VP per No Man's Land round 2-3, 8VP round 4, 15VP round 5",
+    "TERRAFORM": "Terraform action on unclaimed objectives. 4VP per controlled + 2VP per terraformed (max 15VP per turn)",
+    "BURDEN_OF_TRUST": "4VP per controlled objective not in own deployment zone. Select units to guard them. Opponent scores 2VP per unit guarding their objective",
+    "TAKE_AND_HOLD": "From round 2: 5VP per controlled objective (max 15VP per turn)",
+    "THE_RITUAL": "Remove all No Man's Land objectives except one. Ritual action to place new ones. 5VP per No Man's Land objective controlled (max 15VP)"
+  },
+
+  "tournamentMissionPool": {
+    "description": "20 pre-generated missions for tournament play",
+    "keyDifference": "Models CAN end any move on top of objective markers",
+    "objectiveMarkers": "Treat as flat 40mm markers — no impediment to movement"
+  },
+
+  "terrainLayouts": {
+    "recommendedSizes": {
+      "6x4": 4,
+      "10x5": 2,
+      "12x6": 6
+    },
+    "primaryFeature": "Ruins. Variety of heights important for Plunging Fire",
+    "heightKey": {
+      "moreThan4inches": "Tall sections",
+      "2inchesOrLess": "Low sections — INFANTRY can move over freely"
+    }
+  }
+}

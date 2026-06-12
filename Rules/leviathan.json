@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "source": "Leviathan Mission Pack + Leviathan Tournament Companion",
+    "edition": 10,
+    "description": "Leviathan Chapter Approved matched play — Secondary Missions, Gambits, tournament rules"
+  },
+
+  "missionSequence": [
+    "Muster Armies",
+    "Determine Mission (draw Deployment, Mission Rule, Primary Mission cards)",
+    "Read Mission",
+    "Place Objective Markers",
+    "Create the Battlefield",
+    "Determine Attacker and Defender (roll off)",
+    "Select Secondary Missions (Fixed or Tactical)",
+    "Declare Battle Formations",
+    "Deploy Armies (Defender first, alternate one at a time)",
+    "Determine First Turn (roll off)",
+    "Resolve Pre-battle Rules",
+    "Begin the Battle",
+    "End the Battle (5 rounds)",
+    "Determine Victor"
+  ],
+
+  "reservesRestrictions": {
+    "maxUnitsInReserves": "No more than half the number of units in army",
+    "maxPointsInReserves": "No more than half total points of army",
+    "cannotArriveRound1": true,
+    "destroyedIfNotArrived": "Any Reserves not on battlefield by end of round 3 count as destroyed (does not apply to units placed into Strategic Reserves during battle)"
+  },
+
+  "scoring": {
+    "maximumVP": {
+      "primaryAndGambits": 50,
+      "secondaryMissions": 40,
+      "battleReadyArmy": 10,
+      "total": 100
+    },
+    "fixedMissions": {
+      "maxPerCard": 20
+    },
+    "battleReadyBonus": "10VP if every model painted to Battle Ready standard (fully painted with detailed or textured base)"
+  },
+
+  "secondaryMissions": {
+    "fixed": {
+      "description": "Remain active every battle round, can be achieved multiple times. Marked with Fixed Mission symbol",
+      "cannotDiscard": "Fixed Mission cards cannot be discarded for any reason",
+      "remaining": "Remainder of Secondary Mission deck not used"
+    },
+    "tactical": {
+      "description": "Draw cards at start of Command phase — discard once achieved",
+      "drawing": "Draw cards at start of Command phase if fewer than 2 active. Can spend CP on New Orders Stratagem",
+      "discarding": "Can discard active cards at end of your turn — gain 1CP if it is your turn",
+      "deckEmpty": "Cannot generate additional Secondary Missions if deck runs out"
+    },
+    "NEW_ORDERS": {
+      "cost": "1CP",
+      "when": "End of your Command phase",
+      "target": "One of your active Secondary Mission cards",
+      "effect": "Discard it and draw one new Secondary Mission card",
+      "restriction": "Once per battle"
+    },
+    "cards": {
+      "EXTEND_BATTLE_LINES": "5VP — end of your turn: control objective in own deployment zone AND objective in No Man's Land. If only 1 unit remaining: 2VP for controlling 1 objective in No Man's Land",
+      "BEHIND_ENEMY_LINES": "4VP (Fixed) or 5VP (Tactical) — 2+ units wholly within opponent's deployment zone. 3VP if only 1 unit",
+      "ASSASSINATION": "4VP per CHARACTER destroyed (Fixed) or 5VP at end of turn (Tactical) if CHARACTER destroyed or all enemy CHARACTERs destroyed during battle",
+      "BRING_IT_DOWN": "2VP per MONSTER or VEHICLE destroyed. +1VP if Wounds 10+. +1VP if Wounds 15+. +1VP if Wounds 20+. Max 8VP (Tactical). +1VP when achieved (Tactical)",
+      "ENGAGE_ON_ALL_FRONTS": "4VP — units in 4 different table quarters more than 3\" from any other quarter. 2VP if only 3 quarters. +1VP when achieved (Tactical, max 5VP). Non-Battle-shocked units only",
+      "STORM_HOSTILE_OBJECTIVE": "4VP (Fixed) or 5VP (Tactical) — control objective marker that was opponent's at start of your turn, or opponent had none and you gained control of one you didn't have",
+      "CLEANSE": "Select units that give up shooting. At end of turn: 2VP/3VP for 1 objective cleansed (Fixed/Tactical), 4VP/5VP for 2+ (Fixed/Tactical)",
+      "DEPLOY_TELEPORT_HOMER": "3VP centre of battlefield or 4VP/5VP opponent's deployment zone (Fixed/Tactical) — unit gives up shooting and ends in that location",
+      "INVESTIGATE_SIGNALS": "2VP per corner scanned — units give up shooting and end wholly within 9\" of corners",
+      "NO_PRISONERS": "2VP each time enemy unit destroyed (max 5VP)",
+      "DEFEND_STRONGHOLD": "3VP — at end of opponent's turn or battle end: control one or more objectives in your deployment zone",
+      "OVERWHELMING_FORCE": "3VP each time enemy unit destroyed while within range of objective (max 5VP)",
+      "SECURE_NO_MANS_LAND": "5VP — control 2+ objectives in No Man's Land. 2VP for 1 objective",
+      "AREA_DENIAL": "5VP — unit in No Man's Land and no enemy within 6\" of centre. 3VP if no enemy within 3\" of centre",
+      "A_TEMPTING_TARGET": "5VP — opponent selects objective in No Man's Land when drawn. Control it at end of your turn",
+      "CAPTURE_ENEMY_OUTPOST": "8VP — control objective in opponent's deployment zone at end of your turn"
+    }
+  },
+
+  "gambits": {
+    "when": "End of third battle round — if Primary Mission VP <= opponent's VP",
+    "selection": "Draw 3 Gambit cards (remove Proceed as Planned, shuffle rest, randomly discard one, re-add Proceed as Planned). Choose one secretly",
+    "proceedAsPlanned": "Not attempting Gambit — continue scoring Primary Mission normally",
+    "ifAttempting": "Cannot score more VP from Primary Mission (keep VP scored so far). Score Gambit VP at end of battle if successful",
+    "gambits": {
+      "DELAYING_TACTICS": "30VP — at end of turn 5: half of enemy units within Engagement Range of your units must be successfully delayed (D6 per unit, 4+ = delayed, +1 if Battle-shocked, -1 if your unit Battle-shocked). Distraction target = half enemy units in Engagement Range (min 4)",
+      "EMERGENCY_EVACUATION": "30VP — at end of turn 5: units wholly within 6\" of centre roll D6 (-1 if Battle-shocked), 4+ = marked for evacuation. Evacuation target = half your units on battlefield (min 4)",
+      "ORBITAL_STRIKE_COORDINATES": "30VP — at end of turn 5: units wholly within 9\" of corners (not in own deployment zone, not Battle-shocked/Engaged). Roll 2D6, +1 per additional corner covered. 12+ = success",
+      "PROCEED_AS_PLANNED": "Continue scoring Primary Mission as normal"
+    }
+  },
+
+  "missionRuleCards": {
+    "CHILLING_RAIN": "No additional mission rules apply",
+    "HIDDEN_SUPPLIES": "Set up one additional objective marker in No Man's Land. Shift centre marker 6\" toward one corner; place new marker 6\" toward opposite corner",
+    "CHOSEN_BATTLEFIELD": "Players alternate placing objective markers (roll off for first). One in each deployment zone, rest in No Man's Land. More than 6\" from edges, 9\" from other markers",
+    "SCRAMBLER_FIELDS": "Infiltrators cannot set up within range of objectives in No Man's Land or enemy deployment zone. Scouts cannot end within those ranges. Redeployed units cannot be set up within range of No Man's Land objectives. Reserves cannot set up within range of No Man's Land or enemy deployment zone objectives"
+  },
+
+  "primaryMissions": {
+    "TAKE_AND_HOLD": "From round 2: 5VP per objective controlled at end of Command phase (max 15VP per turn). Round 5 second player scores at end of turn instead",
+    "PRIORITY_TARGETS": "Rounds 2-5: 5VP per objective at end of Command phase (max 10VP). End of battle: 5VP per objective controlled (max 15VP)",
+    "THE_RITUAL": "Remove No Man's Land objectives except closest to centre. Each Shooting phase: select unit that gives up shooting to place objective 9\" from another. Rounds 2-4: 5VP per No Man's Land objective controlled (max 15VP)",
+    "SITES_OF_POWER": "No Man's Land objectives are sites of power. Empowered by CHARACTER within range. 3VP per controlled objective + 3VP per empowered site (max 15VP per turn)",
+    "SCORCHED_EARTH": "From round 2: unit gives up shooting to burn objective they control. 5VP per controlled objective (max 10VP). End of battle: 5VP if any No Man's Land burned, 10VP if enemy deployment zone burned",
+    "SUPPLY_DROP": "Randomly select Alpha and Omega objectives. Alpha removed start of round 4. All except Omega removed start of round 5. Scoring varies by round",
+    "DEPLOY_SERVO_SKULLS": "No Man's Land objectives as servo-skulls — can be moved 6\" at end of each turn by controlling player. Score VP based on proximity to opponent's deployment zone",
+    "VITAL_GROUND": "Remove centre No Man's Land objective. 2VP own deployment, 5VP per No Man's Land, 6VP opponent's deployment (max 15VP per turn)",
+    "PURGE_THE_FOE": "4VP if control objectives + 4VP if control more. 4VP if any enemy units destroyed that round + 4VP if more enemy than friendly destroyed"
+  },
+
+  "tournamentMissionPool": {
+    "description": "15 pre-generated missions for tournament play. Prevents need to draw cards — use pre-set combinations",
+    "keyDifference": "Models CAN end any type of move on top of objective markers in tournament play",
+    "objectiveMarkers": "Treat as flat 40mm circular markers — no impediment to movement"
+  },
+
+  "terrainLayouts": {
+    "recommendedAreaTerrainSizes": ["6x4 inches (x4)", "10x5 inches (x2)", "12x6 inches (x6)"],
+    "primaryFeature": "Ruins — efficiently blocks line of sight. Variety of heights important for Plunging Fire",
+    "noFixedMeasurements": "Avoid precisely locked terrain — at least 4\" between physical edges of each terrain feature"
+  },
+
+  "pairingsAndRankings": {
+    "pairingCriteria": ["Record (wins/losses/draws)", "Win path (timing of wins and losses)", "Random within same ranking"],
+    "rankingCriteria": ["Overall record", "Opponents' win records", "Total Victory Points"],
+    "winPath": "Players with same record paired by when they won/lost — prevents mismatched emotional states"
+  }
+}

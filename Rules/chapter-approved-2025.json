@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "source": "Chapter Approved 2025-26 Mission Deck v1.5 + Chapter Approved Tournament Companion v1.5",
+    "edition": 10,
+    "description": "Chapter Approved 2025-26 matched play — Challenger cards, Asymmetric War, Twist deck"
+  },
+
+  "missionTypes": {
+    "incursion": "Mirrored deployment zones, same aim. 1000 points",
+    "strikeForce": "Mirrored deployment zones, same aim. 2000 points",
+    "asymmetricWar": "Different deployment zones and aims. Designed for 2000+ points. Attacker takes first turn"
+  },
+
+  "missionSequence": [
+    "Set Mission Parameters (Incursion/Strike Force/Asymmetric War)",
+    "Muster Armies",
+    "Determine Mission (draw Deployment, Primary Mission, optional Twist card)",
+    "Read Mission",
+    "Place Objective Markers",
+    "Create the Battlefield (44x60\")",
+    "Determine Attacker and Defender (roll off, or agree)",
+    "Select Secondary Missions (Fixed or Tactical)",
+    "Declare Battle Formations",
+    "Deploy Armies (Defender first, TITANIC = skip next deployment turn)",
+    "Redeploy Units",
+    "Determine First Turn (roll off; Asymmetric War: Attacker goes first)",
+    "Resolve Pre-battle Rules",
+    "Begin the Battle",
+    "End the Battle (5 rounds)",
+    "Determine Victor"
+  ],
+
+  "incursionModifications": {
+    "unitLimit": "Max 2 units with same datasheet name (4 for BATTLELINE or DEDICATED TRANSPORT)",
+    "titanicCharacter": "Max 1 TITANIC CHARACTER",
+    "actions": "Advancing does not make BATTLELINE unit ineligible for Actions. Starting an Action does not make BATTLELINE ineligible to shoot"
+  },
+
+  "asymmetricWarDeployment": {
+    "setup": "Both players set up all units simultaneously in their deployment zones. If no room — those units start in Reserves (within Reserves restrictions). If cannot be deployed or enter Reserves — destroyed",
+    "firstTurn": "Attacker takes first turn"
+  },
+
+  "reservesRestrictions": {
+    "maxUnitsInReserves": "No more than half number of units in army",
+    "maxPointsInReserves": "No more than half total points of army",
+    "cannotArriveRound1": true,
+    "destroyedIfNotArrived": "Any Reserves not on battlefield by end of round 3 count as destroyed (except units placed into Strategic Reserves during battle)"
+  },
+
+  "scoring": {
+    "maximumVP": {
+      "primaryMission": 50,
+      "secondaryMissions": 40,
+      "challengerCards": 12,
+      "battleReadyArmy": 10,
+      "combinedMaxPrimarySecondaryChallenger": 90,
+      "total": 100
+    },
+    "fixedMissions": { "maxPerCard": 20 }
+  },
+
+  "challengerCards": {
+    "triggerCondition": "Player has fewer VP than opponent AND difference is 6 or more at start of battle round",
+    "duration": "Player remains Challenger until end of battle round",
+    "drawing": "Draw one Challenger card at start of your Command phase while Challenger",
+    "usage": "Use EITHER the Stratagem OR complete the Mission on card — cannot do both",
+    "discardTiming": "At end of your turn if not used. Discard after use",
+    "cpCostRules": "Rules cannot change CP cost of Stratagem on Challenger card. CP-generating rules cannot be triggered by Challenger card Stratagem"
+  },
+
+  "secondaryMissions": {
+    "tactical": {
+      "drawing": "Draw 2 cards at start of first Command phase. Draw to maintain 2 active cards",
+      "discarding": "If VP scored from card this turn — discard that card at end of turn. Can voluntarily discard at end of your turn — gain 1CP",
+      "newOrders": "1CP — end of Command phase: discard one active card, draw new one"
+    },
+    "cards": {
+      "ASSASSINATION": "4VP per CHARACTER destroyed (Fixed) or 5VP at end of turn (Tactical)",
+      "BEHIND_ENEMY_LINES": "3VP for 1 unit, 4VP for 2+ units wholly in opponent's deployment zone (excluding AIRCRAFT and Battle-shocked)",
+      "BRING_IT_DOWN": "2VP per MONSTER/VEHICLE destroyed. +2VP if combined Wounds 15+. +2VP if combined Wounds 20+",
+      "STORM_HOSTILE_OBJECTIVE": "4VP — control objective opponent had at start of turn",
+      "CULL_THE_HORDE": "5VP each time INFANTRY unit with Starting Strength 13+ destroyed",
+      "RECOVER_ASSETS": "3VP for 2 units, 6VP for 3 units recovering assets across different battlefield zones",
+      "AREA_DENIAL": "2VP — units within 3\" of centre, no enemy within 3\". 5VP if no enemy within 6\"",
+      "SECURE_NO_MANS_LAND": "2VP for 1, 5VP for 2+ objectives in No Man's Land",
+      "CONTAINMENT": "3VP per battlefield edge contained (up to 6VP)",
+      "MARKED_FOR_DEATH": "5VP when selected units destroyed — opponent picks 3 units when drawn",
+      "NO_PRISONERS": "2VP per enemy unit destroyed (up to 5VP)",
+      "DEFEND_STRONGHOLD": "3VP — control objectives in deployment zone at end of opponent's turn",
+      "SABOTAGE": "3VP or 6VP depending on zone — unit in terrain feature performs action",
+      "OVERWHELMING_FORCE": "3VP per enemy unit within range of objective destroyed (up to 5VP)",
+      "EXTEND_BATTLE_LINES": "5VP — control objectives in own zone AND No Man's Land",
+      "ENGAGE_ON_ALL_FRONTS": "2VP for 3 quarters, 4VP for 4 quarters — units more than 6\" from centre",
+      "ESTABLISH_LOCUS": "2VP at centre, 4VP in opponent's deployment zone",
+      "CLEANSE": "2VP for 1, 4VP for 2+ objectives cleansed by units that gave up shooting"
+    }
+  },
+
+  "primaryMissions": {
+    "TAKE_AND_HOLD": "From round 2: 5VP per controlled objective (max 15VP per turn)",
+    "SUPPLY_DROP": "Alpha/Omega objectives. Scoring increases by round. 15VP for Omega in round 5",
+    "LINCHPIN": "From round 2: controlling own deployment zone objective unlocks 5VP per other objective (3VP without it)",
+    "SCORCHED_EARTH": "Burn Objective action from round 2. Score for burned and controlled objectives",
+    "HIDDEN_SUPPLIES": "Extra objective in No Man's Land. 5VP per controlled No Man's Land objective (max 10VP per turn). End of battle bonuses",
+    "PURGE_THE_FOE": "End of each round: 4VP if any enemy destroyed + 4VP if more enemy than friendly. End of Command phase: 4VP for objectives + 4VP if more than opponent",
+    "TERRAFORM": "Terraform action on unclaimed objectives. 4VP per controlled + 2VP per terraformed",
+    "BURDEN_OF_TRUST": "Guard objectives. Score for controlling and defending",
+    "THE_RITUAL": "Ritual action to place objectives. 5VP per No Man's Land objective controlled",
+    "UNEXPLODED_ORDNANCE": "Hazard objectives — move them toward opponent's zone"
+  },
+
+  "tournamentMissionPool": {
+    "description": "20 pre-generated tournament missions. No Asymmetric War, Twist, or Challenger cards in tournament",
+    "format": "Strike Force sized games",
+    "keyDifference": "Models CAN end any move on top of objective markers"
+  },
+
+  "terrainLayouts": {
+    "recommendedSizes": {
+      "6x4": 4,
+      "10x5": 2,
+      "12x6": 6
+    },
+    "primaryFeature": "Ruins. Variety of heights important"
+  },
+
+  "notes": {
+    "cull_the_horde_faq": "If Bodyguard unit of Attached unit meets Starting Strength 13+ criteria independently, yes VP scored when destroyed even if Leader survives",
+    "terraform_faq": "In Chapter Approved 2025-26, a player CAN terraform an objective their opponent already terraformed",
+    "burden_of_trust_faq": "Player going first can score guarding VP at end of rounds 1-5. Player going second can score at end of rounds 2-5"
+  }
+}

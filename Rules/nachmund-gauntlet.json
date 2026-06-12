@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "source": "Crusade: Nachmund Gauntlet",
+    "edition": 10,
+    "description": "Nachmund Gauntlet Crusade — Tactical Reserves, Surgical Deep Strike, campaign, Battle Traits, Relics"
+  },
+
+  "tacticalReserves": {
+    "description": "Crusade armies split into Primary wave and Reinforcement waves. Only 2 of 3 Reinforcement waves participate per battle",
+    "formationStances": {
+      "incursion_1000": {
+        "alpha": { "primaryWave": 400, "perReinforcementWave": 300 },
+        "beta": { "primaryWave": 500, "perReinforcementWave": 250 },
+        "gamma": { "primaryWave": 600, "perReinforcementWave": 200 }
+      },
+      "strikeForce_2000": {
+        "alpha": { "primaryWave": 900, "perReinforcementWave": 550 },
+        "beta": { "primaryWave": 1000, "perReinforcementWave": 500 },
+        "gamma": { "primaryWave": 1100, "perReinforcementWave": 450 }
+      },
+      "onslaught_3000": {
+        "alpha": { "primaryWave": 1400, "perReinforcementWave": 800 },
+        "beta": { "primaryWave": 1500, "perReinforcementWave": 750 },
+        "gamma": { "primaryWave": 1600, "perReinforcementWave": 700 }
+      }
+    },
+    "waveArrival": {
+      "primaryWave": "Set up normally during Deploy Armies step",
+      "wave2": "At start of Reinforcements step of round 2 Movement phase — select one Reinforcement wave, all units arrive as Strategic Reserves",
+      "wave3": "At start of Reinforcements step of round 3 — select one remaining Reinforcement wave, arrive as Strategic Reserves",
+      "unusedWave": "Takes no part in battle. Not part of Crusade army for that battle. Does not gain XP. If WARLORD in unused wave — counts as destroyed for mission purposes (no Out of Action test)"
+    },
+    "rulesAdaptations": {
+      "rapidIngress": "Cannot use Rapid Ingress Stratagem",
+      "battlefieldEdgeSetUp": "When setting up from Reserves (not Surgical Deep Strike) — can set up within 1\" of own battlefield edge even if enemy within 9\" (not within Engagement Range). Unit automatically Battle-shocked if set up this way",
+      "leaderAttachment": "Leaders can only attach to units in their own wave",
+      "transportEmbarking": "Units can only start embarked in TRANSPORTs in their own wave"
+    }
+  },
+
+  "surgicalDeepStrike": {
+    "description": "Once per turn — when unit with Deep Strike arrives from Reserves, can perform Surgical Deep Strike instead of normal Deep Strike",
+    "cannotDoBoth": "If unit has rule allowing set up closer than 9\" — must choose either that rule OR Surgical Deep Strike, not both",
+    "setup": "Set up anywhere more than 3\" horizontally from all enemy models",
+    "deepStrikeTest": {
+      "roll": "2D6 — subtract 1 for each enemy model within 9\" of your unit (excluding Battle-shocked and OC 0 models)",
+      "results": {
+        "4+": "PRECISION STRIKE — unit can act normally this turn",
+        "3": "HURLED INTO BATTLE — unit must take Battle-shock test",
+        "2+": "OFF BALANCE — unit is Battle-shocked",
+        "1orLess": "DEEP STRIKE MISHAP — roll D6 on Mishap table"
+      },
+      "mishapTable": {
+        "1": "DANGEROUS INGRESS — D3 mortal wounds + Battle-shocked",
+        "2": "RECALLED UNDER FIRE — D3 mortal wounds + placed into Strategic Reserves (cannot set up this turn)",
+        "3": "OFF TARGET — D3 mortal wounds + Battle-shocked + must perform another Surgical Deep Strike, no models within 12\" of previous position",
+        "4": "ANTICIPATED — D3 mortal wounds + Battle-shocked + one enemy within 9\" can make Normal move up to D6\"",
+        "5": "MIS_DROP — D6 mortal wounds + Battle-shocked + not eligible to declare charge until end of turn",
+        "6": "DISASTER — D6 mortal wounds + Battle-shocked + not eligible to shoot or declare charge until end of turn"
+      }
+    },
+    "preventionNote": "Rules preventing units from setting up within 12\" of a unit apply even during Surgical Deep Strike"
+  },
+
+  "strategicAdvantage": {
+    "definition": "First player whose progressive objective VP total reaches 10 or more gains strategic advantage",
+    "battleEnd": "Battle ends at end of any round where a player has strategic advantage (otherwise after 5 rounds)",
+    "victor": "Player with most VP wins. If tied — player with strategic advantage wins. Otherwise draw"
+  },
+
+  "mightyChampioms": {
+    "description": "EPIC HERO units assigned Crusade Ability by Campaign Master — increases Crusade points by 1 per EPIC HERO unit",
+    "abilities": {
+      "FRONT_LINE_CHAMPION": "Select one Battle Trait at Declare Battle Formations — EPIC HERO and any unit they join have it",
+      "STRATEGIC_CHAMPION": "At Select Crusade Blessings — roll D6: on 4+, Underdog gets +1 Blessing; if not Underdog, get 1 Blessing",
+      "NEMESIS_CHAMPION": "If CHARACTER destroyed by EPIC HERO's attacks — all army units gain +1XP at end of battle. +1 SAP if WARLORD destroyed",
+      "INSPIRATIONAL_CHAMPION": "While leading unit — ignore any/all Battle Scars of Bodyguard. +1 unit can be Marked for Greatness",
+      "RESTORATIVE_CHAMPION": "Can re-roll failed Out of Action tests for Crusade army",
+      "SUBTLE_CHAMPION": "Can re-roll dice when determining Attacker/Defender",
+      "LOGISTICAL_CHAMPION": "If victor and EPIC HERO on battlefield — gain Victor bonus a second time"
+    }
+  },
+
+  "battleTraits": {
+    "monsterAndVehicle": {
+      "REINFORCED_ARMOUR": "AP of attacks with Damage 1 worsened by 1",
+      "MONSTROUS_MOMENTUM": "+2\" to Move",
+      "BEHEMOTH": "+2 to Wounds",
+      "UNRELENTING": "Ignore Move modifiers. Can move through terrain but roll D6 after — on 1-3, Battle-shocked",
+      "TITAN_SLAYER": "Re-roll Hit rolls of 1 against MONSTER/VEHICLE. Re-roll Hit roll against TITANIC",
+      "TALISMANIC": "+2XP when Marked for Greatness"
+    },
+    "infantry": {
+      "GRIM_SURVIVORS": "Once per battle at start of any phase — Feel No Pain 5+ (or 4+ if Below Half-strength) until end of phase",
+      "DROP_ZONE_DEFENDERS": "While wholly in own deployment zone — +1 Leadership and OC. Enemy Surgical Deep Strike within 9\" — subtract 1 from Deep Strike test",
+      "STRIKEMASTERS": "Spend 1RP at Declare Battle Formations — unit has Deep Strike and +1 to Surgical Deep Strike tests",
+      "TEMPERED_IN_BATTLE": "Once per battle in Command phase — eligible to shoot, charge, and perform Actions in turn it Fell Back. Also eligible for Actions while Battle-shocked",
+      "FLEET_OF_FOOT": "Re-roll Advance rolls. Eligible for Actions when Advancing. When Advancing, enemy cannot use Fire Overwatch against unit",
+      "TERRITORIAL": "Re-roll Wound rolls of 1 when attacking unit within range of objective"
+    },
+    "mounted": {
+      "CAVALRY_OUTRIDERS": "Scouts 6\"",
+      "EVASIVE": "If unit did not Remain Stationary previous turn — worsen AP of ranged attacks by 1",
+      "SHOCK_CAVALRY": "+1 to Hit if target Below Starting Strength. +1 to Wound if target Below Half-strength"
+    },
+    "jumpPack": {
+      "SLEEK_INTERCEPTORS": "When Advancing — do not make Advance roll, instead +6\" to Move",
+      "FIERY_DESCENT": "Once per battle — use Rapid Ingress for 0CP. If Surgical Deep Strike — roll D6 per enemy within 6\": on 4+, 1 mortal wound",
+      "TAKE_TO_THE_SKIES": "Once per battle at end of opponent's Fight phase — remove unit from battlefield, place in Strategic Reserves"
+    },
+    "beast": {
+      "HUNTING_BEASTS": "Re-roll Advance and Charge rolls",
+      "POUNCING_PREDATORS": "Target with Heroic Intervention for 0CP — until end of turn, unit has Fights First",
+      "ENHANCED_ENDURANCE": "+1 to Toughness"
+    },
+    "anyUnit": {
+      "DROP_ZONE_VETERANS": "When set up via Deep Strike — re-roll Hit and Wound rolls of 1 until end of turn. Can re-roll Surgical Deep Strike test",
+      "STEALTHY_ARRIVAL": "When set up via Deep Strike — has Stealth and enemy cannot Fire Overwatch until start of next turn",
+      "PRECISION_INSERTION": "Once per battle when set up via Deep Strike — can set up more than 6\" from enemy (cannot charge that turn). +2 to Surgical Deep Strike test"
+    }
+  },
+
+  "campaign": {
+    "alliances": {
+      "Guardians": "Protect Sangua Terra — best for Imperium",
+      "Despoilers": "Conquer Sangua Terra — best for Chaos",
+      "Marauders": "Opportunistic raiders — other factions"
+    },
+    "strategicSites": {
+      "Praefectus_Bastion": "Controlling alliance can muster up to 4 Reinforcement waves",
+      "Emperors_Voice_Grand_Battery": "When enemy arrives from Strategic Reserves, roll D6: on 5+, D3 mortal wounds",
+      "Tower_of_Murmuration": "Alliance can select one additional Strategic Goal per phase",
+      "Accrandor_Spaceport": "Up to two Surgical Deep Strikes per turn. Once per turn can re-roll Deep Strike test"
+    },
+    "battlePoints": {
+      "incursionWin": 2, "incursionDraw": 2, "incursionLoss": 1,
+      "strikeForceWin": 3, "strikeForceDraw": 2, "strikeForceLoss": 1,
+      "onslaughtWin": 4, "onslaughtDraw": 3, "onslaughtLoss": 2
+    }
+  },
+
+  "crusadeRelics": {
+    "artificer": {
+      "STRATEGIC_LAURELS": "At start of first Command phase if on battlefield — gain 1CP. At end of battle if on battlefield — gain 1 SAP",
+      "CONVERSION_FIELD": "5+ invulnerable save against ranged attacks. On unmodified saving throw of 6 — attacking unit suffers 1 mortal wound",
+      "GENE_TOXIN_AUTOFONT": "Select melee weapon. After bearer fights — select enemy unit hit: until battle end, roll D6 at start of each Command phase: 1 = poison wears off, 2-3 = 1 mortal wound, 4+ = D3 mortal wounds",
+      "AUTO_MEDICAE": "Bearer has Feel No Pain 5+"
+    },
+    "antiquity": {
+      "HAMMER_OF_THE_HEAVENS": "Once per battle in Command phase — place marker. At start of next Command phase: roll 6D6 for each unit within 6\" (+2 per unit within 3\"): each 4+ = 1 mortal wound",
+      "MAELSTROM_CLARION": "Enemy units arriving from Reserves cannot set up within 12\" of bearer",
+      "DISPLACER_FIELD": "Once per battle at end of opponent's Shooting phase (if not in Engagement Range and was targeted) — remove unit from battlefield into Strategic Reserves. When next set up, models have Deep Strike until end of phase",
+      "SIGIL_OF_PSYCHIC_AMPLIFICATION": "PSYKER only. +6\" range to Psychic ranged weapons. +6\" range to Psychic abilities. Psychic Aura abilities +3\" range"
+    },
+    "legendary": {
+      "GLOAMING_MANTLE": "Bearer has Lone Operative and Stealth. While leading unit — unit has Stealth and can only be targeted by ranged attacks if attacker within 18\"",
+      "LYRETH_MIRROR": "At end of opponent's Movement phase — select enemy set up within 12\" this phase: your unit can shoot (only targeting that unit if eligible) or declare charge (no Charge bonus)",
+      "FATE_FORGED_WEAPON": "Select melee weapon — re-roll Wound rolls. Once per battle at start of Fight phase — until end of turn, weapon has DEVASTATING WOUNDS and +battle round number to Strength and Attacks"
+    }
+  }
+}

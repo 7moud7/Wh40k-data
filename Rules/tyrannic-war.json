@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "source": "Crusade: Leviathan — Tyrannic War section",
+    "edition": 10,
+    "description": "Tyrannic War Crusade rules — Battle Traits, Monster Hunters, Striding Behemoths, campaign, missions"
+  },
+
+  "battleTraits": {
+    "characterUnits": {
+      "BORN_HUNTER": "Scouts 9\" ability",
+      "BIO_ACID_BURNS": "CHARACTER models have Feel No Pain 5+",
+      "NATURAL_LEADER": "Can re-roll Battle-shock or Leadership tests",
+      "DEADLY_COMBATANT": "All melee weapons have SUSTAINED HITS 1",
+      "SHADOW_STALKER": "Unit has Stealth ability",
+      "DEATH_INCARNATE_AURA": "While enemy within 6\", worsen their Leadership by 1"
+    },
+    "vehicleUnits": {
+      "BLESSED_HULL": "Models have 5+ invulnerable save",
+      "FOCUSED_GUNNERS": "No penalty to Hit rolls for ranged attacks while within Engagement Range of enemy",
+      "REINFORCED_SUPERSTRUCTURE": "Attacks with Strength 7 or less — worsen AP by 1",
+      "ELITE_CREW": "Re-roll Hit rolls of 1",
+      "ARCHEOTECH_POWER_CELL": "+2\" to Move",
+      "AUTO_REPAIR_NODES": "At start of Command phase, one model regains 1 lost wound"
+    },
+    "infantryUnits": {
+      "BATTLE_SCARRED_RESISTANCE": "Feel No Pain 6+",
+      "VANGUARD_ESPIONAGE": "Scouts 9\"",
+      "OBDURATE_OBEDIENCE": "+1 to OC of all models",
+      "RESOLUTE_VETERANS": "+1 to Battle-shock, Leadership, and Desperate Escape tests",
+      "ONLY_THE_SWIFT_SURVIVE": "+1 to Advance and Charge rolls",
+      "HEADHUNTERS": "At start of battle, select one enemy unit — re-roll Hit and Wound rolls of 1 against it"
+    },
+    "mountedUnits": {
+      "HUNTERS_CELERITY": "+2\" to Move",
+      "HIGH_SPEED_GUNNERY": "When Advancing, all ranged weapons have ASSAULT until end of turn",
+      "PREDATORY_URGE": "Can re-roll Charge rolls",
+      "MOUNTED_GUERRILLAS": "Eligible to declare charge in turn it Fell Back",
+      "ENCIRCLING_RAPTORS": "In Strategic Reserves, count battle round as 1 higher for setting up",
+      "TIRELESS_RAIDERS": "Models can make ranged attacks even within Engagement Range — only against units in Engagement Range"
+    },
+    "stridingBehemothUnits": {
+      "DESTRUCTIVE_IMPULSE": "When destroying enemy unit, add twice as many marks to Tyrannic War Veteran tally",
+      "RAPID_ADAPTATION": "Select any one Monster Hunters Battle Honour regardless of existing ones — does not increase Crusade points or count toward Battle Honour maximum"
+    }
+  },
+
+  "monsterHuntersPath": {
+    "keyword": "MONSTER HUNTERS",
+    "requirement": "INFANTRY or MOUNTED units",
+    "startingHonour": "Giantslayers",
+    "upgradePath": {
+      "GIANTSLAYERS": "Re-roll Hit rolls of 1 when attacking MONSTER or VEHICLE",
+      "PAINFUL_LESSONS": "When MONSTER or VEHICLE attacks this unit, worsen their AP by 1",
+      "INDOMITABLE_DEFIANCE": "While within Engagement Range of MONSTER or VEHICLE, auto-pass Battle-shock and Leadership tests",
+      "HAMSTRINGING_ATTACKS": "After shooting and MONSTER/VEHICLE lost wounds — subtract 2\" from their Move and 2 from Charge rolls until next Shooting phase",
+      "NIMBLE_DEFENCE": "Feel No Pain 5+ against attacks from MONSTER or VEHICLE units",
+      "TITANS_BANE": "Weapons have ANTI-MONSTER 4+ and ANTI-VEHICLE 4+"
+    },
+    "unlocking": "Earn 10 Tyrannic War Veteran points to progress. +1 per enemy unit destroyed. +3 per STRIDING BEHEMOTHS unit destroyed. +6 if TITANIC"
+  },
+
+  "stridingBehemothsPath": {
+    "keyword": "STRIDING BEHEMOTHS",
+    "requirement": "MONSTERS and WALKERS",
+    "startingHonour": "Thunderous Blows",
+    "upgradePath": {
+      "THUNDEROUS_BLOWS": "When destroying enemy unit, subtract 2 from their Out of Action test",
+      "UNSTOPPABLE_ADVANCE": "When making Normal/Advance/Fall Back moves, can move through models and terrain (cannot end on top). No Desperate Escape tests when Falling Back through enemy",
+      "MASSIVE_STOMP": "When selected to fight, before attacks — select non-MONSTER/VEHICLE enemy in Engagement Range. Roll D6: 2-5 = D3 mortal wounds, 6 = 3 mortal wounds",
+      "MONSTROUS_PRESENCE": "Aura — while enemy within Engagement Range: -1 to their Leadership. Cannot use Insane Bravery Stratagem when taking Battle-shock test",
+      "PREDATORY_SENSES": "Re-roll Hit rolls of 1 for ranged attacks",
+      "SHOCKING_CELERITY": "Has Fights First ability",
+      "INDOMITABLE_STATURE": "When ranged attack made against this unit — if attack Strength > unit Toughness, subtract 1 from Wound roll",
+      "PREY_TAKER": "+1 to Advance and Charge rolls",
+      "SWEEPING_BLOW": "Critical Wound inflicts 1 mortal wound in addition to normal damage",
+      "GARGANTUAN_RAGE": "Melee weapons have SUSTAINED HITS 1"
+    },
+    "unlocking": "Same as Monster Hunters — 10 Tyrannic War Veteran points to progress"
+  },
+
+  "tyrannicWarVeteranRequisition": {
+    "cost": "1RP",
+    "requirement": "Unit must be Blooded rank or higher",
+    "effect": "Unit gains TYRANNIC WAR VETERAN keyword and chosen upgrade path keyword. Gains starting Battle Honour for that path. Start Tyrannic War Veteran tally"
+  },
+
+  "crusadeRelics": {
+    "artificer": {
+      "CRIMSON_MEDALLION_OF_BASTIOR": "At start of Command phase, if bearer within range of controlled objective — roll D6: on 4+, gain 1CP",
+      "BIOSPLINT_GLAND": "When bearer's unit ends Charge move — select enemy within Engagement Range: until end of turn subtract 1 from their Hit rolls",
+      "ARTIFICER_WEAPON": "Select weapon — on Critical Hit, target suffers 1 mortal wound in addition to normal damage",
+      "MASTER_CRAFTED_ARMOUR": "+1 to armour saving throws"
+    },
+    "antiquity": {
+      "SIGIL_OF_SOL": "Once per battle round, if bearer on battlefield and you use Strategic Ploy Stratagem — use without spending CP",
+      "CRANIUM_OBSCURA": "Non-PSYKER only. Each time Psychic Attack targets bearer's unit — subtract 1 from Hit roll",
+      "SHADESPLINTER_CLOAK": "Unless part of Attached unit at battle start — has Lone Operative",
+      "LANTERN_OF_DETESTATION": "At start of opponent's Movement phase — for each non-IMPERIUM/CHAOS enemy within Engagement Range, roll D6: on 4+, cannot Fall Back until end of phase",
+      "SHARD_OF_DYING_LIGHT": "PSYKER only. +1 to Wound rolls for Psychic Attacks",
+      "ARCHEOTECH_NANO_MED": "INFANTRY only. First time bearer destroyed — roll D6 at end of phase instead of destruction triggers: on 4+, set bearer back up with D3 wounds"
+    },
+    "legendary": {
+      "GHEIST_PRISM_FIELD": "When making Normal/Advance/Fall Back — can move through models and terrain (cannot end on top). No Desperate Escape tests. After move, roll D6 for each enemy moved across: on 2+, D3 mortal wounds",
+      "VERTEBRAX_OF_VODUN": "At start of Command phase, select one friendly model — select one Aura ability they have. Bearer has that Aura until next Command phase",
+      "VORTEX_GRENADE": "Once per battle — if hit scored, roll D6 for each unit within 6\" of target: on 4+, D3 mortal wounds. Target suffers 3D3 mortal wounds",
+      "NULL_FIELD_DISRUPTOR": "Each time bearer makes melee attack — invulnerable saves cannot be made"
+    }
+  },
+
+  "campaignPhases": {
+    "phases": 3,
+    "structure": "Players form alliances (Defenders, Invaders, Raiders) and fight for Campaign points",
+    "campaignPoints": {
+      "incursionWin": 3, "incursionDraw": 2, "incursionLoss": 1,
+      "strikeForceWin": 4, "strikeForceDraw": 3, "strikeForceLoss": 1,
+      "onslaughtWin": 5, "onslaughtDraw": 4, "onslaughtLoss": 1
+    },
+    "strategicPoints": {
+      "phase1Win": 1, "phase2Win": 2, "phase3Win": 3
+    }
+  },
+
+  "crusadeBlessings": {
+    "description": "Underdogs (lower total Crusade points) gain Crusade Blessings based on difference",
+    "thresholds": {
+      "0-4": 0,
+      "5-9": 1,
+      "10-19": 2,
+      "20+": 4
+    },
+    "blessings": {
+      "PREPARED_POSITIONS": "Until round 2, ranged attacks against units wholly in own deployment zone give Benefit of Cover",
+      "HIGH_STRATEGY": "Start battle with 2CP",
+      "SECRET_ORDERS": "Select one additional Agenda",
+      "WHAT_DOESNT_KILL_YOU": "At end of battle, every non-destroyed unit gains 1XP",
+      "CRITICAL_STRIKE": "Once per battle at start of Charge phase — +1 to Charge rolls until end of phase",
+      "OUTMANOEUVRE": "At start of round 1, up to 3 units gain Scouts 6\" for this battle",
+      "DEDICATION_TO_THE_CAUSE": "Once per turn, re-roll one Battle-shock test",
+      "MASS_DEVOURING": "TYRANIDS only — if half or more enemy units destroyed/Below Half-strength, gain 1RP. All destroyed/Below Half-strength = 3RP",
+      "HELLFIRE_SHELLS": "Non-TYRANIDS only — select one unit: can re-roll Wound rolls against MONSTER or VEHICLE for this battle"
+    }
+  },
+
+  "agendas": [
+    "BATTLEFIELD_SURVIVORS — 2XP per selected non-destroyed unit, +1XP if not Below Half-strength",
+    "SWARM_THE_PLANET — TYRANIDS only — 2XP per unit in table quarters where you outnumber opponent",
+    "HEADHUNTERS — 2XP per CHARACTER destroyed, 4XP for WARLORD",
+    "MONSTROUS_TARGETS — 2XP per MONSTER/VEHICLE destroyed (not DEDICATED TRANSPORTS), 4XP if TITANIC",
+    "ERADICATE_THE_SWARM — 1XP each time 6+ enemy models destroyed in one shoot/fight selection",
+    "CRITICAL_OBJECTIVES — 2XP per unit within range of two opponent-selected objectives at battle end",
+    "DRIVE_HOME_THE_BLADE — 3XP per unit within 6\" of opponent's battlefield edge",
+    "CLEANSE_INFESTATION — 2XP per unit tasked to cleanse infested objective they control at end of turn",
+    "FORWARD_OBSERVERS — 2XP + 1CP if unit in opponent's deployment zone at end of opponent's next turn",
+    "RECOVER_MISSION_ARCHIVES — 1XP or 2XP + 1CP for controlling non-deployment zone objective",
+    "MALEFIC_HUNTER — 1XP per PSYKER or SYNAPSE unit destroyed (+1XP if CHARACTER)"
+  ]
+}

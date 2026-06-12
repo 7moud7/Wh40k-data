@@ -1,0 +1,468 @@
+{
+  "meta": {
+    "edition": 10,
+    "coreRulesVersion": "1.8",
+    "balanceDataslateVersion": "3.4",
+    "lastUpdated": "March 2026"
+  },
+
+  "battleRound": {
+    "phases": ["command", "movement", "shooting", "charge", "fight"],
+    "notes": "Both players take a turn each battle round. Same player always goes first each round."
+  },
+
+  "commandPhase": {
+    "steps": ["command", "battleShock"],
+    "command": {
+      "cpGained": "Both players gain 1CP at start of Command phase",
+      "maxCPPerRound": "Maximum 1CP per battle round from any source (total, including Command phase CP)",
+      "notes": "Resolve any other Command phase rules before Battle-shock step"
+    },
+    "battleShock": {
+      "trigger": "Each unit Below Half-strength on battlefield",
+      "roll": "2D6 — pass if result >= best Leadership in unit",
+      "failEffects": [
+        "OC of all models becomes 0",
+        "If Falls Back, take Desperate Escape test for every model",
+        "Controlling player cannot use Stratagems to affect that unit"
+      ],
+      "duration": "Until start of next Command phase",
+      "insaneBravery": "Insane Bravery Stratagem (1CP) lets unit auto-pass — once per battle"
+    }
+  },
+
+  "movementPhase": {
+    "steps": ["moveUnits", "reinforcements"],
+    "moveTypes": {
+      "remainStationary": "Unit does not move — models cannot be moved rest of phase",
+      "normalMove": "Move up to M\". Cannot end within Engagement Range of enemy",
+      "advance": "Roll D6, add to M\". Cannot shoot or charge same turn (except Assault weapons)",
+      "fallBack": "Move up to M\" out of Engagement Range. Cannot shoot or charge same turn. Desperate Escape tests for models moving over enemy (1-2 on D6 = one model destroyed)"
+    },
+    "engagementRange": "Within 1\" horizontally and 5\" vertically",
+    "unitCoherency": {
+      "2to6models": "All within 2\" horizontally and 5\" vertically of at least one other model in unit",
+      "7plusModels": "All within 2\" horizontally and 5\" vertically of at least two other models"
+    },
+    "terrain": {
+      "upTo2inches": "Models move over freely as if not there",
+      "over2inches": "Must climb — count vertical distance as part of move. Cannot end mid-climb",
+      "flying": "FLY models can move over enemy models and terrain. Measure through air when starting/ending on terrain"
+    },
+    "reinforcements": {
+      "deepStrike": "Set up more than 9\" horizontally from all enemy models",
+      "strategicReserves": {
+        "round2": "Within 6\" of any battlefield edge, not in enemy deployment zone, not within 9\" of enemies",
+        "round3plus": "Within 6\" of any battlefield edge, not within 9\" of enemies"
+      },
+      "reservesUnitRule": "Counts as having made Normal move — cannot move further. Any unit not on battlefield at battle end counts as destroyed"
+    },
+    "transports": {
+      "embark": "All models end Normal/Advance/Fall Back move within 3\" of friendly TRANSPORT — can embark",
+      "disembark": "Set up wholly within 3\" of TRANSPORT, not within Engagement Range of enemy",
+      "disembarkAfterMove": "Counts as Normal move — cannot move or charge this turn",
+      "cannotDisembark": "If TRANSPORT Advanced or Fell Back this turn",
+      "destroyedTransport": "Must disembark. Roll D6 per model — on 1, unit suffers 1 mortal wound. Unit Battle-shocked until next Command phase. Counts as Normal move, cannot charge",
+      "emergencyDisembark": "If cannot set up within 3\" — set up within 6\" instead. Roll D6 per model — 1-3 = 1 mortal wound"
+    },
+    "aircraft": {
+      "movement": "Normal move only. Must move straight forward minimum 20\". Can pivot up to 90° after. Cannot Advance/Fall Back/Remain Stationary",
+      "offEdge": "If base crosses battlefield edge or cannot make minimum move — placed in Strategic Reserves, arrives next turn",
+      "deployement": "Must start in Reserves, treated as Strategic Reserves once battle starts"
+    },
+    "surgeMove": {
+      "rules": [
+        "Each unit can only make one surge move per phase",
+        "Cannot surge while Battle-shocked",
+        "Cannot surge while within Engagement Range of one or more enemy units"
+      ]
+    }
+  },
+
+  "shootingPhase": {
+    "eligibility": "Unit cannot shoot if it Advanced or Fell Back this turn, or is within Engagement Range of enemy (except Pistols/MONSTERS/VEHICLES)",
+    "selectTargets": "Before any attacks resolved. Target must have at least one model visible to attacking model and within weapon range",
+    "bigGunsNeverTire": {
+      "rule": "MONSTER and VEHICLE can shoot even while within Engagement Range of enemy",
+      "penalty": "-1 to Hit rolls when making ranged attacks if within Engagement Range (not Pistols)",
+      "canBeTargeted": "Enemy MONSTER/VEHICLE within Engagement Range of your units CAN be targeted — but each attack suffers -1 Hit (not Pistols)"
+    },
+    "lockedInCombat": "Cannot shoot while within Engagement Range of enemy. Cannot shoot at enemies within Engagement Range of your friendly units (exceptions: MONSTER/VEHICLE, Pistols)"
+  },
+
+  "chargePhase": {
+    "eligibility": "Must be within 12\" of enemy and not have Advanced or Fell Back. Cannot charge if within Engagement Range. AIRCRAFT cannot charge",
+    "chargeRoll": "2D6\" — must be sufficient to end within Engagement Range of all targets without entering Engagement Range of non-targets",
+    "chargeBonus": "Unit that makes Charge move gains Fights First until end of turn",
+    "targets": "Do not need to be visible. Can select multiple targets"
+  },
+
+  "fightPhase": {
+    "steps": ["fightsFirst", "remainingCombats"],
+    "fightsFirst": "Units with Fights First ability (including those that charged) fight first — players alternate, starting with player whose turn it is NOT",
+    "alternating": "Players alternate selecting eligible units. Cannot pass — must fight if eligible units remain",
+    "eligible": "Within Engagement Range of enemy, OR made Charge move this turn",
+    "fightSequence": {
+      "pileIn": "Move each model not in base contact up to 3\" — must end closer to closest enemy, in base contact if possible. Unit must end in Engagement Range and Unit Coherency",
+      "attacks": "Determine which models can fight. Select weapon. Select targets. Make attacks",
+      "consolidate": "Move each model not in base contact up to 3\" toward closest enemy. If cannot stay in Engagement Range — can move toward closest objective marker (must end within range)"
+    },
+    "whichModelsFight": "Models within Engagement Range of enemy, OR in base contact with another model in same unit that is in base contact with enemy"
+  },
+
+  "attackSequence": {
+    "steps": ["hitRoll", "woundRoll", "allocateAttack", "savingThrow", "inflictDamage"],
+    "hitRoll": {
+      "ranged": "D6 >= BS",
+      "melee": "D6 >= WS",
+      "criticalHit": "Unmodified 6 — always successful",
+      "unmodified1": "Always fails",
+      "maxModifier": "Cannot be modified by more than -1 or +1 total"
+    },
+    "woundRoll": {
+      "twiceOrMoreStrength": "2+",
+      "greaterStrength": "3+",
+      "equalStrength": "4+",
+      "lessStrength": "5+",
+      "halfOrLessStrength": "6+",
+      "criticalWound": "Unmodified 6 — always successful",
+      "unmodified1": "Always fails",
+      "maxModifier": "Cannot be modified by more than -1 or +1 total"
+    },
+    "allocateAttack": "Must allocate to model that has already lost wounds or had attacks allocated this phase. Otherwise, any model in unit",
+    "savingThrow": {
+      "armour": "D6 + AP modifier >= Save characteristic",
+      "invulnerable": "Never modified by AP. Player chooses armour or invulnerable save",
+      "unmodified1": "Always fails",
+      "maxImprovement": "Cannot be improved by more than +1",
+      "benefitOfCover": "+1 to armour saving throws against ranged attacks. Does not apply to models with 3+ Save against AP 0 attacks"
+    },
+    "mortalWounds": {
+      "rules": [
+        "Each mortal wound = 1 damage, allocated one at a time",
+        "No saving throws of any kind",
+        "Excess damage NOT lost — carry over to next model in unit (unless Hazardous or Devastating Wounds)",
+        "Mortal wounds from attacks apply AFTER normal damage, even if normal damage saved"
+      ]
+    },
+    "damage": "Model loses wounds equal to attack Damage characteristic. If reduced to 0 — destroyed. Excess damage from attack lost"
+  },
+
+  "keyRules": {
+    "belowHalfStrength": {
+      "multiModel": "Number of models < half Starting Strength",
+      "singleModel": "Wounds remaining < half Wounds characteristic"
+    },
+    "startingStrength": "Number of models when added to army",
+    "attachedUnits": {
+      "formation": "Leader CHARACTER attaches to Bodyguard unit during Declare Battle Formations",
+      "toughness": "Always use Bodyguard Toughness when targeted",
+      "attackAllocation": "Attacks cannot be allocated to CHARACTER while Bodyguard models remain",
+      "precision": "PRECISION attacks against Attached unit can be allocated to visible CHARACTER",
+      "startingStrength": "Combined Starting Strengths of Leader + Bodyguard"
+    },
+    "feelNoPain": "Roll D6 each time model would lose a wound — if result >= x, wound not lost",
+    "deadlyDemise": "When model destroyed, roll D6 before removing — on 6, each unit within 6\" suffers x mortal wounds",
+    "loneOperative": "Can only be targeted by ranged attacks if attacking model within 12\"",
+    "stealth": "Each time ranged attack made against unit, subtract 1 from Hit roll",
+    "auraAbilities": "Model always within range of own Aura. Multiple instances of same Aura don't stack",
+    "persistingEffects": "Effects with duration continue even if unit embarks/disembarks or Attached unit separates",
+    "outOfPhaseRules": "When using out-of-phase rules to perform an action, cannot use any other rules triggered normally in that phase",
+    "sequencing": "Two rules at same time — player whose turn it is chooses order. Pre/post-battle or start/end of battle round — roll off"
+  },
+
+  "weaponAbilities": {
+    "ASSAULT": "Can be shot even if unit Advanced. When selected to shoot, only Assault weapons can be used",
+    "RAPID_FIRE_X": "Increase Attacks by X when targeting units within half range",
+    "TWIN_LINKED": "Can re-roll Wound roll",
+    "PISTOL": "Can shoot while within Engagement Range of enemy — must target one of those enemy units. Cannot shoot alongside non-Pistol weapons (except MONSTER/VEHICLE)",
+    "TORRENT": "Attack automatically hits",
+    "LETHAL_HITS": "Critical Hit automatically wounds",
+    "LANCE": "Add 1 to Wound roll if bearer made Charge move this turn",
+    "INDIRECT_FIRE": "Can target units not visible. If no models visible when selected — subtract 1 from Hit roll, 1-3 always fails, target has Benefit of Cover",
+    "PRECISION": "When attack successfully wounds Attached unit, can allocate to visible CHARACTER instead",
+    "BLAST": "Add 1 to Attacks for every 5 models in target unit (round down). Cannot target units within Engagement Range of own army",
+    "MELTA_X": "Increase Damage by X when targeting units within half range",
+    "HEAVY": "Add 1 to Hit rolls if unit Remained Stationary this turn",
+    "HAZARDOUS": "After shooting/fighting, roll D6 per Hazardous weapon used — on 1, selected model suffers 3 mortal wounds (wounded model first, then non-CHARACTER, then CHARACTER)",
+    "DEVASTATING_WOUNDS": "Critical Wound — no saves of any kind. Allocate after all other attacks resolved. Inflicts mortal wounds equal to Damage characteristic instead of normal damage",
+    "SUSTAINED_HITS_X": "Critical Hit scores X additional hits",
+    "EXTRA_ATTACKS": "Attack with this weapon in addition to one other melee weapon",
+    "ANTI_KEYWORD_X": "Unmodified Wound roll of X+ against targets with matching keyword = Critical Wound",
+    "IGNORES_COVER": "Target cannot have Benefit of Cover against this attack"
+  },
+
+  "deploymentAbilities": {
+    "DEEP_STRIKE": "Set up in Reserves. Arrive in Reinforcements step, more than 9\" horizontally from all enemy models. If arriving from Strategic Reserves, can choose Deep Strike OR Strategic Reserves placement",
+    "SCOUTS_X": "At start of first battle round before first turn, make Normal move up to X\". Must end more than 9\" from all enemy models. DEDICATED TRANSPORT can use if embarked unit has Scouts",
+    "INFILTRATORS": "During deployment, can be set up anywhere on battlefield more than 9\" from enemy deployment zone and all enemy models",
+    "LEADER": "CHARACTER with Leader ability can attach to listed Bodyguard units during Declare Battle Formations",
+    "FIGHTS_FIRST": "Unit eligible to fight does so in Fights First step (every model in unit must have this ability)"
+  },
+
+  "stratagems": {
+    "rules": {
+      "cost": "Reduce CP by listed amount",
+      "oncePerPhase": "Cannot use same Stratagem more than once per phase",
+      "battleShockedRestriction": "Cannot use Stratagems to affect Battle-shocked units",
+      "cpCostModification": "Rules that let you use Stratagem for 0CP without naming it — instead reduce cost by 1CP. Cannot grant ability to use same Stratagem twice per phase unless Stratagem named explicitly"
+    },
+    "categories": {
+      "BATTLE_TACTIC": "Bolster unit's attacks or defence",
+      "EPIC_DEED": "Individual model or unit performs mighty feat",
+      "STRATEGIC_PLOY": "Gain tactical advantage",
+      "WARGEAR": "Effect of specialised equipment"
+    },
+    "balanceDataslateChanges": {
+      "worsenAPStratagems": "Effect changed to 'until attacking unit has finished making its attacks' not 'until end of phase'",
+      "closerSetUpStratagems": "Effects allowing set up more than 3\" changed to more than 6\"",
+      "preventTargetingStratagems": "Effects allowing targeting only within 12\" changed to 18\"",
+      "addNewUnitsStratagems": "Once per battle restriction added",
+      "moreThanOncePerPhase": "Can only use if Stratagem name explicitly specified in the rule"
+    },
+    "coreStratagems": {
+      "COMMAND_RE_ROLL": {
+        "cost": 1,
+        "category": "BATTLE_TACTIC",
+        "when": "Any phase — just after making Advance roll, Charge roll, Desperate Escape test, Hazardous test, Hit roll, Wound roll, Damage roll, saving throw, or roll to determine attacks",
+        "effect": "Re-roll that roll/test/saving throw. If fast dice rolling, select one to re-roll",
+        "playerTurn": "EITHER"
+      },
+      "COUNTER_OFFENSIVE": {
+        "cost": 2,
+        "category": "STRATEGIC_PLOY",
+        "when": "Fight phase, just after an enemy unit has fought",
+        "target": "One unit from your army within Engagement Range of enemy that has not fought this phase",
+        "effect": "Your unit fights next",
+        "playerTurn": "EITHER"
+      },
+      "EPIC_CHALLENGE": {
+        "cost": 1,
+        "category": "EPIC_DEED",
+        "when": "Fight phase, when a CHARACTER unit from your army within Engagement Range of one or more Attached units is selected to fight",
+        "target": "One CHARACTER model in your unit",
+        "effect": "Until end of phase, all melee attacks by that model have PRECISION ability",
+        "playerTurn": "YOUR"
+      },
+      "INSANE_BRAVERY": {
+        "cost": 1,
+        "category": "EPIC_DEED",
+        "when": "Battle-shock step of your Command phase, just before taking a Battle-shock test",
+        "target": "That unit",
+        "effect": "Unit automatically passes that Battle-shock test",
+        "restriction": "Cannot use more than once per battle",
+        "playerTurn": "YOUR"
+      },
+      "GRENADE": {
+        "cost": 1,
+        "category": "WARGEAR",
+        "when": "Your Shooting phase",
+        "target": "One GRENADES unit (not Advanced/Fell Back/shot this turn, not within Engagement Range of enemy)",
+        "effect": "Select one GRENADES model and one enemy unit not within Engagement Range of any of your units and within 8\" and visible. Roll six D6: for each 4+, target suffers 1 mortal wound",
+        "playerTurn": "YOUR"
+      },
+      "TANK_SHOCK": {
+        "cost": 1,
+        "category": "STRATEGIC_PLOY",
+        "when": "Your Charge phase, just after a VEHICLE unit ends a Charge move",
+        "target": "That VEHICLE unit",
+        "effect": "Select one enemy unit within Engagement Range and one VEHICLE model within Engagement Range of it. Roll D6 equal to Toughness of selected VEHICLE model. For each 5+, enemy suffers 1 mortal wound (max 6)",
+        "playerTurn": "YOUR"
+      },
+      "RAPID_INGRESS": {
+        "cost": 1,
+        "category": "STRATEGIC_PLOY",
+        "when": "End of opponent's Movement phase",
+        "target": "One unit from your army in Reserves",
+        "effect": "Unit arrives as if Reinforcements step of your Movement phase. If every model has Deep Strike, can use Deep Strike placement",
+        "restriction": "Cannot enable unit to arrive in battle round it would not normally be able to",
+        "playerTurn": "OPPONENT"
+      },
+      "FIRE_OVERWATCH": {
+        "cost": 1,
+        "category": "STRATEGIC_PLOY",
+        "when": "Opponent's Movement or Charge phase — just after enemy unit set up, or starts/ends Normal/Advance/Fall Back move, or declares a charge",
+        "target": "One unit from your army within 24\" of enemy and eligible to shoot if it were your Shooting phase",
+        "effect": "If enemy visible to your unit, your unit shoots that enemy as if your Shooting phase",
+        "restrictions": [
+          "Cannot target TITANIC units",
+          "Until end of phase, unmodified Hit roll of 6 required to score hit (regardless of BS or modifiers)",
+          "Only once per turn"
+        ],
+        "notes": "MONSTER/VEHICLE locked in combat cannot use Fire Overwatch. Out-of-phase — other Shooting phase rules do not trigger",
+        "playerTurn": "OPPONENT"
+      },
+      "GO_TO_GROUND": {
+        "cost": 1,
+        "category": "BATTLE_TACTIC",
+        "when": "Opponent's Shooting phase, just after enemy unit selects targets",
+        "target": "One INFANTRY unit from your army selected as target of one or more attacks",
+        "effect": "Until end of phase, all models have 6+ invulnerable save and Benefit of Cover",
+        "playerTurn": "OPPONENT"
+      },
+      "SMOKESCREEN": {
+        "cost": 1,
+        "category": "WARGEAR",
+        "when": "Opponent's Shooting phase, just after enemy unit selects targets",
+        "target": "One SMOKE unit from your army selected as target of one or more attacks",
+        "effect": "Until end of phase, all models have Benefit of Cover and Stealth ability",
+        "playerTurn": "OPPONENT"
+      },
+      "HEROIC_INTERVENTION": {
+        "cost": 1,
+        "category": "STRATEGIC_PLOY",
+        "when": "Opponent's Charge phase, just after an enemy unit ends a Charge move",
+        "target": "One unit from your army within 6\" of that enemy unit and eligible to declare a charge against it",
+        "effect": "Your unit declares a charge targeting only that enemy unit, resolved as if your Charge phase",
+        "restrictions": [
+          "Can only select VEHICLE unit if it is a WALKER",
+          "Even if charge successful, your unit does NOT receive Charge bonus this turn"
+        ],
+        "playerTurn": "OPPONENT"
+      }
+    }
+  },
+
+  "strategicReserves": {
+    "maximumPoints": {
+      "incursion": 250,
+      "strikeForce": 500,
+      "onslaught": 750,
+      "notes": "Combined points of all units in Strategic Reserves cannot exceed these limits. Units embarked in TRANSPORT in Reserves count too"
+    },
+    "arrival": "From second battle round onwards during Reinforcements step",
+    "placement": {
+      "round2": "Wholly within 6\" of any battlefield edge. Not in enemy deployment zone. Not within 9\" of any enemy",
+      "round3plus": "Wholly within 6\" of any battlefield edge. Not within 9\" of any enemy"
+    },
+    "notDeployed": "Any Strategic Reserves units not on battlefield at battle end count as destroyed",
+    "aircraft": "AIRCRAFT must start in Reserves. Treated as Strategic Reserves once battle starts"
+  },
+
+  "terrain": {
+    "benefitOfCover": {
+      "effect": "+1 to armour saving throws against ranged attacks",
+      "restriction": "Models with Save 3+ or better cannot benefit against attacks with AP 0",
+      "stacking": "Multiple instances not cumulative"
+    },
+    "types": {
+      "CRATER": {
+        "keywords": ["AREA TERRAIN", "CRATER"],
+        "cover": "INFANTRY wholly on top has Benefit of Cover against ranged attacks"
+      },
+      "BARRICADE": {
+        "keywords": ["OBSTACLE", "BARRICADE"],
+        "movement": "Can move up, over, down — cannot end on top",
+        "engagement": "In Charge phase, if enemy within 1\" of barricade, charging unit on opposite side can charge if ending as close as possible to barricade and within 2\". In Fight phase, eligible to fight if target on opposite side within 2\"",
+        "cover": "INFANTRY wholly within 3\" — if not fully visible due to barricade, has Benefit of Cover"
+      },
+      "BATTLEFIELD_DEBRIS": {
+        "keywords": ["OBSTACLE", "BATTLEFIELD DEBRIS"],
+        "movement": "Can move up, over, down — cannot end on top",
+        "cover": "If model not fully visible to every attacker due to this feature, has Benefit of Cover"
+      },
+      "HILL": {
+        "keywords": ["HILL"],
+        "movement": "Models can be set up on or end move on top (base must not overhang)",
+        "cover": "If model not fully visible to every attacker due to this feature, has Benefit of Cover"
+      },
+      "WOODS": {
+        "keywords": ["AREA TERRAIN", "WOODS"],
+        "visibility": "Models wholly within are never fully visible. Models outside looking through woods — target never fully visible (has Benefit of Cover). AIRCRAFT and TOWERING exceptions",
+        "cover": "Model wholly within, or not fully visible due to woods = Benefit of Cover"
+      },
+      "RUINS": {
+        "keywords": ["AREA TERRAIN", "RUINS"],
+        "movement": "INFANTRY/PRIMARCH/BEAST can move through walls/floors as if not there. Cannot end within wall. INFANTRY/FLY can be on any floor level. Others ground floor only",
+        "visibility": "Cannot see over or through (units outside cannot draw LoS through walls). Models can see INTO ruins normally. Models wholly within can see out normally",
+        "plungingFire": "Model wholly within, 6\"+ vertically above ground, targets at ground level — improve AP by 1",
+        "cover": "Model wholly within, or not fully visible due to ruins = Benefit of Cover"
+      }
+    }
+  },
+
+  "mustering": {
+    "battleSizes": {
+      "incursion": { "points": 1000, "duration": "Up to 2 hours" },
+      "strikeForce": { "points": 2000, "duration": "Up to 3 hours" },
+      "onslaught": { "points": 3000, "duration": "Up to 4 hours" }
+    },
+    "armyRules": {
+      "factionKeyword": "All units must share the chosen faction keyword",
+      "enhancements": "Max 3 enhancements. Only CHARACTERS can have enhancements. No duplicate enhancements. EPIC HEROES cannot have enhancements",
+      "unitDuplicates": "Max 3 units with same datasheet name. Max 6 if BATTLELINE or DEDICATED TRANSPORT",
+      "epicHeroes": "Cannot include same EPIC HERO more than once",
+      "warlord": "Must include at least one CHARACTER eligible to be Warlord",
+      "dedicatedTransports": "Must start with at least one unit embarked — or cannot be deployed and counts as destroyed in round 1"
+    },
+    "steps": [
+      "Select Battle Size",
+      "Start Army Roster",
+      "Select Army Faction",
+      "Select Detachment Rules",
+      "Select Units",
+      "Select Warlord"
+    ]
+  },
+
+  "scoring": {
+    "objectiveMarkers": {
+      "range": "Within 3\" horizontally and 5\" vertically",
+      "levelOfControl": "Sum of OC characteristics of all models within range",
+      "controlled": "Player with highest Level of Control at end of any phase or turn",
+      "contested": "Both players have equal Level of Control",
+      "cannotEndOnMarker": "Models cannot end a move on top of objective marker"
+    },
+    "onlyWarMission": {
+      "captureAndControl": "Progressive — from round 2 onwards, at end of each player's Command phase score 1VP per controlled objective (max 3VP per turn)",
+      "battleEnd": "After 5 rounds OR all models in one army destroyed",
+      "victory": "Most VP wins. If one army destroyed — that player loses regardless of VP"
+    }
+  },
+
+  "visibility": {
+    "modelVisible": "Any part of another model can be seen from any part of observing model",
+    "unitVisible": "One or more models in unit visible to observing model",
+    "modelFullyVisible": "Every part of another model facing observing model can be seen from any part of observing model",
+    "unitFullyVisible": "Every model in unit fully visible to observing model",
+    "notes": "Observing model can see through other models in its own unit. For fully visible — can also see through models in unit being observed"
+  },
+
+  "dice": {
+    "D3": "Roll D6, halve result rounding up",
+    "rerolls": "Cannot re-roll a dice more than once. Re-rolls before modifiers. Re-roll all dice if result is sum of multiple dice (e.g. 2D6)",
+    "unmodifiedResult": "After re-rolls, before modifiers",
+    "rollOff": "Both roll D6 — highest wins. Ties: roll off again. No re-rolls or modifiers allowed"
+  },
+
+  "phaseQuickRef": {
+    "command": {
+      "bothPlayersDo": ["Gain 1CP"],
+      "youDo": ["Take Battle-shock tests for Below Half-strength units"]
+    },
+    "movement": {
+      "youDo": ["Move units (Normal/Advance/Remain Stationary/Fall Back)", "Set up Reinforcements"]
+    },
+    "shooting": {
+      "youDo": ["Select eligible units to shoot", "Select targets", "Make ranged attacks"]
+    },
+    "charge": {
+      "youDo": ["Declare charges (units within 12\" of enemy)", "Make Charge rolls", "Make Charge moves"]
+    },
+    "fight": {
+      "bothPlayersDo": ["Units with Fights First ability fight (alternating — non-active player starts)", "Remaining units fight (alternating — non-active player starts)"]
+    }
+  },
+
+  "keyDefinitions": {
+    "criticalHit": "Unmodified Hit roll of 6",
+    "criticalWound": "Unmodified Wound roll of 6",
+    "normalDamage": "Damage inflicted by weapon Damage characteristic (not mortal wounds)",
+    "psychicAttack": "Attack with PSYCHIC weapon or mortal wounds from Psychic ability",
+    "belowHalfStrength": "Fewer than half Starting Strength models remaining (or for single-model units: fewer than half Wounds remaining)",
+    "attachedUnit": "Leader CHARACTER merged with Bodyguard unit — treated as single unit",
+    "reservesUnit": "Unit starting battle in location other than battlefield",
+    "engagementRange": "Within 1\" horizontally and 5\" vertically of enemy model",
+    "unitCoherency": "All models within 2\" horizontally and 5\" vertically of at least one (or two if 7+ models) other model in same unit"
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "source": "Crusade: Pariah Nexus",
+    "edition": 10,
+    "description": "Pariah Nexus Crusade — Blackstone, Strategic Footings, alliance campaign, Battle Traits, Crusade Relics"
+  },
+
+  "blackstone": {
+    "gaining": "From Agendas, mission rules, Crusade Relics, and other sources. Track on Order of Battle Blackstone tally",
+    "harnessing": "Spend Blackstone Fragments to purchase Blackstone Upgrades (Battle Honours and Crusade Relics)",
+    "salvaging": "After battle: spend 5 Blackstone Fragments to grant 5XP to one CHARACTER unit. Once per campaign phase",
+    "allianceUse": "In Pariah Nexus campaign — Blackstone Fragments can be pooled to earn Strategic points"
+  },
+
+  "blackstoneUpgrades": {
+    "battleHonours": {
+      "NODAL_MAP": { "cost": 20, "effect": "While within range of objective, if Battle-shocked — change OC to 1 instead of 0" },
+      "SINGLE_MINDED_SEEKER": { "cost": 10, "effect": "If bearer is WARLORD — end of battle roll D6 (+2 if won): on 6+, gain 3 Blackstone Fragments" },
+      "ACQUISITIVE_OPPORTUNIST": { "cost": 15, "effect": "If bearer is WARLORD — at battle start gains ability based on Strategic Footing: Aggressive = Scouts 6\", Balanced = Lone Operative, Defensive = Stealth" }
+    },
+    "crusadeRelics": {
+      "EMPATHIC_DISINCLINATOR": { "cost": 15, "effect": "Select one objective at battle start — while bearer on battlefield, friendly units within range have 5+ invulnerable save" },
+      "NOCTILITH_ARMAMENT": { "cost": 20, "effect": "Select melee weapon — once per battle in Fight phase, activate: invulnerable saves cannot be made against attacks with that weapon" },
+      "BLACKSTONE_AMULET": { "cost": 20, "effect": "Each time melee attack allocated to bearer — on unmodified saving throw of 6 (or 5+ for Psychic), attacking unit suffers 1 mortal wound after attacks resolved" }
+    }
+  },
+
+  "battleTraits": {
+    "characterUnits": {
+      "LEAD_FROM_THE_FRONT": "Infiltrators ability",
+      "HORROR_HARDENED": "Can be targeted with Stratagems even while Battle-shocked",
+      "ARCH_ACQUISITOR": "+3 to OC of one CHARACTER model",
+      "CLAIM_STALKER": "While within range of objective — has Stealth ability",
+      "HEROIC_CONSTITUTION": "+1 to Wounds of one CHARACTER model",
+      "DUELLIST": "Can re-roll Hit rolls for melee attacks targeting CHARACTER units"
+    },
+    "monsterAndVehicleUnits": {
+      "HARDENED_DEFENCES": "Feel No Pain 6+",
+      "TOTEMIC_PRESENCE": "+2 to OC of one model",
+      "TANK_HUNTER": "Re-roll Wound rolls of 1 against MONSTER or VEHICLE",
+      "STUBBORN_EXPLORATOR": "Can move over terrain 4\" or less as if not there when making Normal or Advance move",
+      "HEAVILY_ARMOURED": "Once per battle — change Damage of one attack allocated to model to 0",
+      "REAPER": "Re-roll Hit rolls of 1 against INFANTRY or MOUNTED"
+    },
+    "infantryUnits": {
+      "BATTLE_SCARRED_RESISTANCE": "Feel No Pain 6+",
+      "WRAITH_OF_RUIN": "Infiltrators ability",
+      "UNITED_BY_ADVERSITY": "Can target this unit with Heroic Intervention for 0CP even if already targeted another unit",
+      "RAIDERS": "Re-roll Hit rolls of 1 when attacking unit within range of objective",
+      "PURGATORS": "Gains GRENADES keyword. If already has it — once per battle, Grenade Stratagem for 0CP",
+      "TERROR_ASSAULT": "At start of Fight phase — select enemy in Engagement Range: that unit must take Battle-shock test"
+    },
+    "mountedUnits": {
+      "RIDERS_OF_RUIN": "+2\" to Move",
+      "THUNDERING_ONSLAUGHT": "+1 to Advance and Charge rolls",
+      "SADDLEBORNE_ASSASSINS": "When attacking closest eligible target — improve AP by 1",
+      "LINEBREAKERS": "When unit ends Charge move — melee weapons have SUSTAINED HITS 1 until end of turn",
+      "CRUSHING_CHARGE": "When unit ends Charge move — roll D6 per model in Engagement Range: on 4+, enemy suffers 1 mortal wound",
+      "BLUR_OF_SPEED": "Models have Stealth ability"
+    }
+  },
+
+  "crusadeRelics": {
+    "artificer": {
+      "BLACKSTONE_COMPASS": "After winning battle, if bearer on battlefield — gain 2 additional Blackstone Fragments",
+      "VEIL_OF_ANCIENTS": "Bearer has 4+ invulnerable save",
+      "TREASURE_OF_THE_TECHNOMANDRITES": "Select weapon — gains LETHAL HITS, PRECISION, or SUSTAINED HITS 1",
+      "ARMOUR_OF_THE_SOULLESS_SENTRY": "+1 to Toughness and Save"
+    },
+    "antiquity": {
+      "NOCTILITH_SIGIL": "Non-PSYKER only. Feel No Pain 4+ against Psychic Attacks for bearer's unit",
+      "DOLMEN_KEY": "Unit has Deep Strike. Can target unit with Rapid Ingress for 0CP — set up more than 6\" from enemies within range of objective. Cannot charge until end of turn",
+      "VANTACHRENS_MIRROR": "Unit has Stealth. When bearer's unit targeted by charge — subtract 2 from Charge roll",
+      "EYE_OF_MARS": "After both armies deployed — select one unit from your Crusade army and redeploy it (can go into Strategic Reserves)"
+    },
+    "legendary": {
+      "BLADE_OF_THE_DYNAST": "+1 to Strength, Damage, and AP of melee weapons. Once per battle in Charge phase (Aggressive footing) — +2 to Charge rolls for bearer's unit",
+      "NOCTIC_SHIELD": "+1 to Toughness and Wounds. Once per battle when attack targets bearer's unit (Defensive footing) — until end of phase, subtract 1 from Damage of attacks",
+      "ROD_OF_THE_OMNISSIAH": "At start of Command phase, regain up to D3 lost wounds. Once per battle (Balanced footing) — select enemy in Engagement Range: suffers mortal wounds equal to wounds regained"
+    }
+  },
+
+  "strategicFootings": {
+    "description": "Each player secretly selects Aggressive, Balanced, or Defensive before battle. Revealed simultaneously — determines Attacker and who has Advantage",
+    "footings": {
+      "aggressive": "Favours attacking first — typically Attacker or gains Advantage",
+      "balanced": "Neutral — can go either way",
+      "defensive": "Favours defending — typically Defender or opponent gains Advantage"
+    },
+    "advantage": "Effect varies by mission. Some missions give +1VP opportunities, combat bonuses, or other benefits to player with Advantage",
+    "selectionMatrix": "See Pariah Nexus Crusade book for full Attacker/Advantage determination table"
+  },
+
+  "crusadeBlessings": {
+    "thresholds": { "0-4": 0, "5-9": 1, "10-19": 2, "20+": 4 },
+    "blessings": {
+      "PREPARED_POSITIONS": "Until round 2, units in own deployment zone have Benefit of Cover against ranged attacks",
+      "HIGH_STRATEGY": "Start battle with 2CP",
+      "COMPARTMENTALISED_PLANS": "Select one additional Agenda",
+      "DEFIANCE_UNDIMMED": "At end of battle, each non-destroyed unit gains 1XP",
+      "FORTUNE_FAVOURED": "Once per battle round — if WARLORD on battlefield, use Command Re-roll for 0CP",
+      "DESPERATE_OFFENSIVE": "During round 1, +1\" to Move of INFANTRY and WALKER units",
+      "LINCHPIN_LEADERSHIP": "Until end of battle, improve Leadership of units in Attached units by 1",
+      "BLACKSTONE_BOUNTY": "After battle gain 1 Blackstone Fragment (+1 more if won)",
+      "DEFEND_THE_DIG_SITE": "At end of battle, 1 Blackstone Fragment per unit on battlefield (max 3)",
+      "PSYCHIC_SHIELDING": "Once per battle in Shooting phase or start of Fight — up to 3 units have Feel No Pain 5+ against Psychic Attacks until end of phase",
+      "NOCTILITH_AUGURY": "After Strategic Footing revealed — can change your footing"
+    },
+    "factionBlessings": {
+      "EMPOWERED_BY_FAITH": "IMPERIUM only — once per battle at start of Command phase: until next Command phase, Attached units can re-roll Battle-shock and Leadership tests",
+      "RIGHTFUL_HEIRS": "NECRONS only — at start of Command phase, select one NECRONS INFANTRY unit: +1 OC until next Command phase",
+      "UNEXPECTED_MEDDLERS": "Non-IMPERIUM and non-NECRONS — after deployment, select up to 2 units and redeploy them (can go into Strategic Reserves)"
+    }
+  },
+
+  "campaign": {
+    "alliances": {
+      "Seekers": "Harvest blackstone and end the Stilling — best for Imperium forces",
+      "Protectors": "Protect blackstone from others — best for Necrons",
+      "Interlopers": "Opportunistic raiders — for other factions"
+    },
+    "phases": 3,
+    "campaignPoints": {
+      "incursionWin": 2, "incursionDraw": 2, "incursionLoss": 1,
+      "strikeForceWin": 3, "strikeForceDraw": 2, "strikeForceLoss": 1,
+      "onslaughtWin": 4, "onslaughtDraw": 3, "onslaughtLoss": 2
+    },
+    "strategicPoints": {
+      "phase1Victor": 2, "phase1RunnerUp": 1,
+      "phase2Victor": 3, "phase2RunnerUp": 1,
+      "phase3Victor": 4, "phase3RunnerUp": 0
+    },
+    "tiebreaker": "Alliance with most Blackstone Fragments wins if Strategic Points tied"
+  },
+
+  "agendas": [
+    "TO_THE_LAST — 2XP per selected non-destroyed unit + 1XP if not Below Half-strength + 1 Blackstone Fragment per non-destroyed",
+    "CRITICAL_RESOURCES — 2XP per unit within range of opponent-selected objectives + 1 Blackstone per selected unit",
+    "KING_SLAYER — 2XP + 1 Blackstone per CHARACTER unit destroyed (max 4 Blackstone). +2XP for WARLORD",
+    "DRIVE_HOME_THE_BLADE — 3XP per unit within 6\" of opponent's battlefield edge",
+    "RECOVER_BLACKSTONE_DATA — 1XP or 2XP + 1CP for controlling non-deployment zone objective. +1 Blackstone per XP gained (max 3)",
+    "CENTRAL_POSITION — 1XP per CHARACTER within 3\" of centre at end of Command phase. 4 Blackstone Fragments if 4+ XP gained",
+    "REAP_A_TALLY — For every 3rd enemy unit destroyed: 2XP + 1 Blackstone (max 2) to unit that destroyed them",
+    "PSYCHIC_BEACONS — 2XP + 4 Blackstone — 2+ PSYKER CHARACTERS in different table quarters",
+    "RE_ESTABLISH_COMMUNICATION — 4XP + 4 Blackstone — control opponent-selected Comms Array with CHARACTER at battle end"
+  ]
+}

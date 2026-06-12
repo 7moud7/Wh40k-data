@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "source": "Crusade: Leviathan",
+    "edition": 10,
+    "description": "Core Crusade rules — Order of Battle, Crusade Cards, XP, Requisitions, Battle Honours, Battle Scars"
+  },
+
+  "orderOfBattle": {
+    "description": "List of all units in your Crusade force",
+    "supplyLimit": {
+      "starting": 1000,
+      "increaseRequisition": "Increase Supply Limit (1RP) — adds 200 points"
+    },
+    "supplyUsed": "Combined points values of all units on Order of Battle — cannot exceed Supply Limit",
+    "battleTally": "Number of battles played with this Crusade force",
+    "requisitionPoints": {
+      "starting": 5,
+      "maximum": 10,
+      "gained": "1RP after each battle regardless of result"
+    },
+    "crusadePoints": "Measure of upgrades and bonuses a unit has gained. Increases with Battle Honours, decreases with Battle Scars"
+  },
+
+  "crusadeCards": {
+    "contents": [
+      "Unique name for unit",
+      "Models and how many of each",
+      "Wargear equipped",
+      "Any Enhancements",
+      "Total points value",
+      "Selectable keywords (e.g. CHAPTER)",
+      "Rules that must be selected before battle",
+      "Upgrades purchased via Requisitions",
+      "Battle Honours and Battle Scars",
+      "Experience Points (XP) — starts at 0",
+      "Combat Tallies — starts at 0",
+      "Total Crusade Points — starts at 0"
+    ],
+    "cannotChange": "Once added to Order of Battle — cannot change number of models, wargear, or selectable rules"
+  },
+
+  "experiencePoints": {
+    "sources": {
+      "battleExperience": "1XP — each unit with Crusade card that was part of Crusade army gains 1XP at end of battle",
+      "dealersOfDeath": "1XP — for every third enemy unit destroyed (tracked on Crusade card)",
+      "markedForGreatness": "3XP — select one unit from Crusade army at end of battle"
+    },
+    "neverGainXP": ["EPIC HEROES", "FORTIFICATIONS", "SWARMS", "Summoned and Replacement units"],
+    "ranks": {
+      "0-5": "Battle-ready",
+      "6-15": "Blooded",
+      "16-30": "Battle-hardened",
+      "31-50": "Heroic (CHARACTER only)",
+      "51+": "Legendary (CHARACTER only)"
+    },
+    "nonCharacterCap": "Non-CHARACTER units capped at 30XP and Battle-hardened rank (unless Legendary Veterans Requisition used)"
+  },
+
+  "requisitions": {
+    "INCREASE_SUPPLY_LIMIT": {
+      "cost": "1RP",
+      "when": "Any time",
+      "effect": "Increase Crusade force Supply Limit by 200 points"
+    },
+    "RENOWNED_HEROES": {
+      "cost": "1-3RP (1RP + 1RP per existing Enhancement in Order of Battle, max 3RP)",
+      "when": "First time adding CHARACTER to Order of Battle, or each time a unit gains a rank",
+      "effect": "Select one Enhancement that unit has access to (instead of Battle Honour if used on rank gain)",
+      "restrictions": "Not EPIC HEROES. Not units with existing Enhancement. Not units with Disgraced or Mark of Shame Battle Scars"
+    },
+    "LEGENDARY_VETERANS": {
+      "cost": "3RP",
+      "when": "When a non-CHARACTER unit reaches 30XP",
+      "effect": "Unit's XP no longer capped at 30. Can be promoted above Battle-hardened. Max Battle Honours increased to 6"
+    },
+    "REARM_AND_RESUPPLY": {
+      "cost": "1RP",
+      "when": "Before a battle",
+      "effect": "Select one unit — change wargear options as per datasheet. Cannot exceed Supply Limit"
+    },
+    "REPAIR_AND_RECUPERATE": {
+      "cost": "1-5RP (1RP + 1RP per Battle Honour the unit has, max 5RP)",
+      "when": "After a battle",
+      "effect": "Select one unit with one or more Battle Scars — remove one Battle Scar (Crusade points +1)"
+    },
+    "FRESH_RECRUITS": {
+      "cost": "1-4RP (1RP + 1RP per 2 Battle Honours rounding up, max 4RP)",
+      "when": "Any time",
+      "effect": "Add models to unit up to maximum on datasheet. Cannot exceed Supply Limit"
+    }
+  },
+
+  "battleHonours": {
+    "gaining": "Each time a unit gains a rank, it can gain one Battle Honour",
+    "crusadePointsIncrease": "+1 per Battle Honour (or +2 if TITANIC)",
+    "maximum": {
+      "nonCharacter": 3,
+      "character": 6
+    },
+    "atMaximum": "Must remove one existing Battle Honour when gaining a new one",
+    "categories": ["Battle Traits", "Weapon Modifications", "Crusade Relics"],
+    "weaponModifications": {
+      "gaining": "Select one model in unit (CHARACTER or Unit Champion first), then one weapon. Roll 2D6 for two modifications or choose",
+      "modifications": {
+        "1": "FINELY BALANCED — Improve BS or WS by 1",
+        "2": "BRUTAL — Add 1 to Strength",
+        "3": "ARMOUR PIERCING — Improve AP by 1",
+        "4": "MASTER-WORKED — Add 1 to Damage",
+        "5": "HEIRLOOM — Add 1 to Attacks",
+        "6": "PRECISE — Critical Wounds have PRECISION ability"
+      }
+    },
+    "crusadeRelics": {
+      "whoCanGain": "CHARACTER models only",
+      "categories": {
+        "artificer": { "rankRequired": "Any", "crusadePointsIncrease": 1 },
+        "antiquity": { "rankRequired": "Heroic or Legendary", "crusadePointsIncrease": 2 },
+        "legendary": { "rankRequired": "Legendary", "crusadePointsIncrease": 3 }
+      },
+      "unique": "Cannot include same Crusade Relic more than once in Order of Battle"
+    }
+  },
+
+  "outOfAction": {
+    "when": "End of each Crusade battle — for each unit from Crusade army that is destroyed",
+    "roll": "D6 — on 2+, test passed, nothing happens. On 1, test failed",
+    "failedOptions": {
+      "devastatingBlow": {
+        "requirement": "Unit must have one or more Battle Honours",
+        "effect": "Remove one Battle Honour. Crusade points -1 (or -2 if TITANIC)"
+      },
+      "battleScar": "Unit gains one Battle Scar"
+    }
+  },
+
+  "battleScars": {
+    "gaining": "Roll D6 or choose",
+    "crusadePointsEffect": "-1 per Battle Scar currently on unit (can be negative)",
+    "maximum": 3,
+    "atMaximum": "Must choose Devastating Blow result. If no Battle Honours — unit permanently destroyed and removed from Order of Battle",
+    "scars": {
+      "1": "CRIPPLING DAMAGE — Cannot Advance. -1\" to Move",
+      "2": "BATTLE-WEARY — -1 to Battle-shock, Leadership, Desperate Escape, and Out of Action tests",
+      "3": "FATIGUED — -1 to OC of models. Never receives Charge bonus",
+      "4": "DISGRACED — Cannot use Stratagems to affect. Cannot be Marked for Greatness",
+      "5": "MARK OF SHAME — Cannot form Attached unit. Unaffected by friendly Aura abilities. Cannot be Marked for Greatness",
+      "6": "DEEP SCARS — Critical Hits against this unit automatically wound"
+    }
+  },
+
+  "attachedUnitsInCrusade": {
+    "battleHonoursAndScars": "All Battle Honours and Scars of both Leader and Bodyguard apply to Attached unit",
+    "everyModelRules": "Rules specifying 'every model in unit' only apply if both Leader AND Bodyguard have same rule",
+    "outOfAction": "If individual Leader or Bodyguard destroyed at end of battle — take separate Out of Action test for each",
+    "xpAndTallies": "Each unit gains 1XP for Battle Experience. Combat tallies and bonus XP awarded to either Leader or Bodyguard (your choice, not both)"
+  },
+
+  "musteringCrusadeArmy": {
+    "steps": [
+      "Select Battle Size",
+      "Start Army Roster",
+      "Select Army Faction",
+      "Select Detachment Rules",
+      "Select Units (from Order of Battle)",
+      "Select Warlord"
+    ],
+    "unitLimits": {
+      "sameDatasheet": "Max 3 units with same datasheet name",
+      "battlelineOrDedicatedTransport": "Max 6 units with same datasheet name",
+      "epicHero": "Cannot include same EPIC HERO more than once"
+    },
+    "mustInclude": "At least one CHARACTER unit",
+    "dedicatedTransports": "Must start with at least one unit embarked or cannot be deployed — counts as destroyed in first battle round"
+  },
+
+  "summonedAndReplacementUnits": {
+    "description": "Units added to Crusade army during battle — NOT added to Order of Battle permanently",
+    "xp": "Do not gain XP",
+    "outOfAction": "Do not take Out of Action tests"
+  }
+}
